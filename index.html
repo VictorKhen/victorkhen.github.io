@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Khen | Portfolio Dashboard</title>
+
+    <meta name="description" content="Victor Khen - Partner & Technical Marketing Manager specializing in AI Fabric, Telecom, and Open Networking. Portfolio showcasing solution briefs, case studies, and GTM strategies.">
+    <meta name="keywords" content="AI Fabric, Telecom, Partner Marketing, Technical Marketing, Open Networking, Victor Khen, GTM Strategy, Solution Briefs">
+    <meta property="og:title" content="Victor Khen | Portfolio Dashboard">
+    <meta property="og:description" content="From Silicon to Solution. Partner Marketing for AI Fabric & Telecom.">
+    <meta property="og:image" content="https://placehold.co/1200x630/4285F4/ffffff?text=Victor+Khen&font=roboto">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%234285F4%22/></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- CSS Root Variables (Google's Color Palette) --- */
+        :root {
+            --g-blue: #4285F4;
+            --g-red: #DB4437;
+            --g-yellow: #F4B400;
+            --g-green: #0F9D58;
+            --g-text-primary: #202124;
+            --g-text-secondary: #5f6368;
+            --g-bg-light: #f8f9fa;
+            --g-bg-white: #ffffff;
+            --g-border: #dfe1e5;
+            --g-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+            --g-shadow-hover: 0 4px 8px 0 rgba(60,64,67,.3), 0 6px 20px 0 rgba(60,64,67,.19);
+        }
+
+        /* --- Base & Typography --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--g-bg-light);
+            color: var(--g-text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            /* UPDATED: Consistent rem padding */
+            padding: 1.5rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 500;
+            color: var(--g-text-primary);
+            /* UPDATED: Tighter heading line-height */
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
+        /* UPDATED: Brighter 'Google Style' border & reduced margin */
+        h2 { font-size: 2rem; margin-top: 2.5rem; margin-bottom: 1.5rem; border-bottom: 3px solid var(--g-blue); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.25rem; font-weight: 700; }
+        /* UPDATED: Normalized font-size */
+        p, ul { color: var(--g-text-secondary); max-width: 700px; font-size: 1rem; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 0.5rem; }
+
+        /* --- Header / Navigation --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Added for responsiveness */
+            /* UPDATED: Reduced padding */
+            padding: 1rem 2rem;
+            background: var(--g-bg-white);
+            border-bottom: 1px solid var(--g-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-left {
+            display: flex;
+            flex-direction: column;
+        }
+        .header-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--g-text-primary);
+        }
+        .header-tagline {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--g-text-secondary);
+            margin-top: -5px;
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+            /* UPDATED: Reduced padding */
+            padding: 3rem 2rem;
+            background: var(--g-bg-white);
+        }
+        @media (min-width: 900px) {
+            .hero {
+                grid-template-columns: 1.2fr 1fr;
+                /* UPDATED: Reduced padding */
+                padding: 4rem 2rem;
+            }
+        }
+        .hero-left {
+            animation: slideInFromLeft 0.8s ease-out;
+        }
+        .hero-outro {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--g-text-primary);
+            margin-top: 1.5rem;
+        }
+        .hero-tagline {
+            font-size: 1.75rem;
+            font-weight: 300;
+            color: var(--g-text-primary);
+            height: 2.5rem; /* Height of one line */
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        .tagline-slider {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        }
+        .tagline-slider span {
+            display: flex;
+            align-items: center;
+            height: 2.5rem;
+            gap: 0.75rem;
+        }
+        .tagline-slider .fa-solid {
+            font-size: 1.5rem;
+        }
+        .tagline-slider .c-blue { color: var(--g-blue); }
+        .tagline-slider .c-red { color: var(--g-red); }
+        .tagline-slider .c-green { color: var(--g-green); }
+        .tagline-slider .c-yellow { color: var(--g-yellow); }
+
+        .hero-cta {
+            display: inline-block;
+            background-color: var(--g-blue);
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin-top: 1rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .hero-cta:hover {
+            box-shadow: var(--g-shadow);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Right - Progression Timeline */
+        .hero-right {
+            animation: fadeIn 1.2s ease-out 0.3s;
+            animation-fill-mode: backwards;
+        }
+        .progression-timeline {
+            position: relative;
+            padding-left: 40px;
+            border-left: 3px solid var(--g-border);
+        }
+        .progression-item {
+            position: relative;
+            /* UPDATED: Tightened timeline spacing */
+            margin-bottom: 1.25rem;
+        }
+        .progression-item:last-child {
+            margin-bottom: 0;
+        }
+        .progression-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 2px;
+            width: 14px;
+            height: 14px;
+            background: var(--g-bg-white);
+            border: 3px solid var(--g-blue);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .progression-item.current::before {
+            background: var(--g-blue);
+            animation: pulse 2s infinite;
+        }
+        .progression-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 0.25rem 0;
+        }
+        .progression-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--g-text-secondary);
+        }
+
+        /* --- NEW: Testimonials Section --- */
+        #testimonials {
+            /* UPDATED: Reduced padding */
+            padding: 2.5rem 0;
+            background-color: var(--g-bg-white);
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        .testimonial-card {
+            background: var(--g-bg-light);
+            border: 1px solid var(--g-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--g-text-secondary);
+            font-style: italic;
+            margin: 0 0 1rem 0;
+            flex-grow: 1;
+            border-left: 3px solid var(--g-blue);
+            padding-left: 1rem;
+        }
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+        }
+        .testimonial-author-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--g-text-primary);
+        }
+        .testimonial-author-title {
+            font-size: 0.9rem;
+            color: var(--g-text-secondary);
+        }
+
+
+        /* --- Main Dashboard (Tabs) --- */
+        #dashboard {
+            /* NEW: Added scroll-margin-top */
+            scroll-margin-top: 100px;
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--g-border);
+            margin-bottom: 1.5rem;
+        }
+        .tab-button {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--g-text-secondary);
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .tab-button:hover {
+            background-color: #f1f3f4;
+        }
+        .tab-button.active {
+            color: var(--g-blue);
+            border-bottom-color: var(--g-blue);
+        }
+        .tab-button .fa-solid {
+            margin-right: 0.5rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* --- Tab 1: Work Dashboard --- */
+        .filter-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .filter-chip {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: var(--g-bg-white);
+            border: 1px solid var(--g-border);
+            color: var(--g-text-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-chip:hover {
+            background: #f1f3f4;
+        }
+        .filter-chip.active {
+            background: #e8f0fe; /* Google's light blue */
+            color: var(--g-blue);
+            border-color: var(--g-blue);
+        }
+        .filter-chip .fa-solid {
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: var(--g-bg-white);
+            border-radius: 12px;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,.3);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: var(--g-text-primary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        .card.hide {
+            transform: scale(0.9);
+            opacity: 0;
+            display: none;
+        }
+        .card:hover {
+            box-shadow: var(--g-shadow-hover);
+            transform: translateY(-4px);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-category {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .cat-ai { color: var(--g-blue); }
+        .cat-telecom { color: var(--g-green); }
+        .cat-case-study { color: var(--g-red); }
+        .cat-strategy { color: var(--g-yellow); }
+        .cat-solution { color: #8e44ad; } /* Purple */
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.4;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+        .card-metric {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--g-green);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .card-metric .fa-solid {
+            font-size: 0.9rem;
+        }
+
+        .card-link {
+            font-weight: 500;
+            color: var(--g-blue);
+            text-decoration: none;
+        }
+        .card-link i {
+            margin-left: 0.25rem;
+            transition: transform 0.2s ease;
+        }
+        .card:hover .card-link i {
+            transform: translateX(4px);
+        }
+
+        /* --- Tab 2: Career Experience Timeline --- */
+        .experience-timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--g-border);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--g-bg-light);
+            border: 4px solid var(--g-blue);
+        }
+        .timeline-date {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--g-text-secondary);
+            margin-bottom: 0.25rem;
+        }
+        .timeline-role {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--g-text-primary);
+            margin: 0;
+        }
+        .timeline-company {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--g-text-secondary);
+            margin: 0;
+            padding-left: 20px; /* Indent bullets */
+        }
+        .timeline-desc li {
+            margin-bottom: 0.25rem;
+        }
+
+
+        /* --- Tab 3: Skills & Capabilities --- */
+        .skill-group {
+            /* UPDATED: Tightened spacing */
+            margin-bottom: 2rem;
+        }
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+        .skill-heading {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--g-text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .skill-heading .fa-solid {
+            color: var(--g-blue);
+            font-size: 1.3rem;
+            width: 25px; /* Ensures alignment */
+            text-align: center;
+        }
+        .skill-group p {
+            font-size: 1rem;
+            max-width: 800px;
+            margin-bottom: 1rem;
+        }
+        .skill-group ul {
+            max-width: 800px;
+            list-style-type: disc;
+        }
+        .skill-group li {
+            font-size: 0.95rem;
+        }
+
+
+        /* --- NEW: Footer --- */
+        .footer {
+            text-align: center;
+            /* UPDATED: Reduced padding and margin */
+            padding: 2rem;
+            margin-top: 3rem;
+            background: var(--g-bg-white);
+            border-top: 1px solid var(--g-border);
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .footer-link {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--g-text-primary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+        .footer-link:hover {
+            background-color: #f1f3f4;
+        }
+        .footer-link.cta {
+            background-color: var(--g-blue);
+            color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .footer-link.cta:hover {
+            background-color: #3b78e6;
+        }
+        .footer-copy {
+            font-size: 0.9rem;
+            color: var(--g-text-secondary);
+        }
+
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInFromLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(66, 133, 244, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(66, 133, 244, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-left">
+            <div class="header-logo">Victor Khen</div>
+            <div class="header-tagline">Partner & Technical Marketing | AI Fabric | Telecom Networks</div>
+        </div>
+        </header>
+
+    <main>
+        <section class="hero" id="hero"> <div class="hero-left">
+                <div class="hero-tagline">
+                    <div class="tagline-slider" id="tagline-slider">
+                        </div>
+                </div>
+                
+                <p>I translate deep technical architectures into clear business value. My ability to operate between R&D, partners, and customers enables me to design effective GTM strategies and the content that brings them to life.</p>
+                
+                <ul>
+                    <li><strong>Full-Stack Technical Expertise:</strong> Hands-on from CLI testing to carrier-grade architecture design.</li>
+                    <li><strong>Partner & Channel Builder:</strong> Proven success developing ecosystem GTM strategies, channel programs and trainings, and C-level hardware/operator relationships.</li>
+                    <li><strong>End-to-End Content Creator:</strong> Scripts, designs, and produces complete technical marketing assets - from pitch decks and solution briefs to HTML pages and video promotion content.</li>
+                </ul>
+                
+                <p class="hero-outro">Bridging complex technology with compelling market execution.</p>
+                
+                <a href="https://www.linkedin.com/in/victorkhen/" target="_blank" class="hero-cta">
+                    Connect on LinkedIn <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="hero-right">
+                <div class="progression-timeline">
+                    <div class="progression-item">
+                        <h4>Video Surveillance</h4>
+                        <p>Foundation in Network Infrastructure</p>
+                    </div>
+                    <div class="progression-item">
+                        <h4>Unified Comms & Data Storage</h4>
+                        <p>Understanding Enterprise Applications</p>
+                    </div>
+                    <div class="progression-item">
+                        <h4>Telecom Transport Networks</h4>
+                        <p>Mastering Modern Transport Technologies</p>
+                    </div>
+                    <div class="progression-item current">
+                        <h4>AI Network Fabric</h4>
+                        <p>Marketing the Next Generation of DC Fabric</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Recommendations</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Victor is incredibly bright and simply gets things done. During our time at IP Infusion, Victor was my team's Marketing partner and he consistently delivered. Always up to the task, Victor eagerly took on new initiatives and executed on time and with quality..."</p>
+                        <div class="testimonial-author">
+                            <span class="testimonial-author-name">Craig Schaefer</span>
+                            <span class="testimonial-author-title">Vice President of Channel Sales of IP Infusion | During his work with Victor Khen</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Victor is a dynamic and creative marketing professional whose energy never fades. Bold in pursuing goals and inventive in his campaigns, he inspires those around him to think bigger and act faster."</p>
+                        <div class="testimonial-author">
+                            <span class="testimonial-author-name">Nicole Chen</span>
+                            <span class="testimonial-author-title">Chief Marketing Officer of UfiSpace | During her work with Victor Khen</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Victor is a highly driven and aggressive sales professional who played a key role in growing company's business during his time with us. He's not only results-oriented but also a great team player who brings creative solutions to overcome challenges."</p>
+                        <div class="testimonial-author">
+                            <span class="testimonial-author-name">Steven Lin</span>
+                            <span class="testimonial-author-title">VP, Sales and Marketing of QSAN | During his work with Victor Khen</span>
+                        </div>
+                    </div>
+                     </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="dashboard">
+                <h2>Work Dashboard</h2>
+                
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="tab-experience">
+                        <i class="fa-solid fa-timeline"></i> Career Experience
+                    </button>
+                    <button class="tab-button" data-tab="tab-work">
+                        <i class="fa-solid fa-briefcase"></i> Work Portfolio
+                    </button>
+                    <button class="tab-button" data-tab="tab-skills">
+                        <i class="fa-solid fa-star"></i> Skills & Capabilities
+                    </button>
+                </div>
+
+                <div id="tab-experience" class="tab-content active">
+                    <div class="experience-timeline" id="experience-timeline">
+                        </div>
+                </div>
+
+                <div id="tab-work" class="tab-content">
+                    <div class="filter-chips">
+                        <button class="filter-chip active" data-filter="all">
+                            <i class="fa-solid fa-star"></i> All Work
+                        </button>
+                        <button class="filter-chip" data-filter="solution">
+                            <i class="fa-solid fa-file-alt"></i> Solution Briefs
+                        </button>
+                        <button class="filter-chip" data-filter="case-study">
+                            <i class="fa-solid fa-user-check"></i> Case Studies
+                        </button>
+                        <button class="filter-chip" data-filter="strategy">
+                            <i class="fa-solid fa-lightbulb"></i> Strategy & Blogs
+                        </button>
+                         <button class="filter-chip" data-filter="ai">
+                            <i class="fa-solid fa-brain"></i> AI Fabric
+                        </button>
+                        <button class="filter-chip" data-filter="telecom">
+                            <i class="fa-solid fa-tower-broadcast"></i> Telecom & FWA
+                        </button>
+                    </div>
+                    <div class="portfolio-grid" id="portfolio-grid">
+                        </div>
+                </div>
+
+                <div id="tab-skills" class="tab-content">
+                    
+                    <div class="skill-group">
+                        <h3 class="skill-heading">
+                            <i class="fa-solid fa-brain"></i>
+                            <span>Full-Stack Technical Expertise</span>
+                        </h3>
+                        <p>Technical knowledge is grounded in hands-on experience, from the silicon level to the application layer.</p>
+                        <ul>
+                            <li><strong>Broad Domain Knowledge:</strong> Enterprise Networking, Telecom (DAA, FTTx, xhaul, RAN), Optical (IPoDWDM), Data Center Fabric, and Storage (SAN/NAS/Object).</li>
+                            <li><strong>Hands-On Validation:</strong> Ability to test NOS using VM instances, practice with CLI, and deploy network storage, networking, and server gear.</li>
+                            <li><strong>Project Leadership:</strong> Served as project lead for Telecom Infra Project (TIP) DCSG interoperability and supported EANTC SR-MPLS/SRv6 testing.</li>
+                            <li><strong>Partner Integration:</strong> Fully capable of discussing and planning complex technical integrations standalone with partners.</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-heading">
+                            <i class="fa-solid fa-handshake"></i>
+                            <span>Partner & Channel Champion</span>
+                        </h3>
+                        <p>Proven ability to build and manage the entire partner lifecycle, from C-level relationships to program execution.</p>
+                        <ul>
+                            <li><strong>GTM & Sales:</strong> Years of experience in channel sales, business development, solution selling, and ecosystem partner development across the EMEA region.</li>
+                            <li><strong>Program Management:</strong> Proven ability to plan and run complete channel partner programs, including partner rebates, benefits, and sales enablement (Litmos, etc.).</li>
+<li><strong>Relationship Building:</strong> Maintain good relations with global hardware/software vendors, national DC operators, and C-level executives in Taiwan and Europe.</li>
+                            <li><strong>Logistics & Events:</strong> Experienced in planning and designing trade show booths (messaging, graphics, topologies) and managing marketing logistics (giveaways).</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-heading">
+                            <i class="fa-solid fa-file-powerpoint"></i>
+                            <span>End-to-End Content Producer</span>
+                        </h3>
+                        <p>A "full-stack" marketer owning the entire content pipeline, from initial research to final production, with no hand-offs required.</p>
+                        <ul>
+                            <li><strong>Strategy:</strong> Ability to translate complex R&D and product messaging into clear, marketable GTM messaging.</li>
+                            <li><strong>Full-Stack Design:</strong> Personally creates all assets: technical solution briefs, case studies, high-skill presentations (PPTX), and print/PDF design.</li>
+                            <li><strong>Web & Video:</strong> Creates complete HTML solution pages from scratch and handles all video editing (e.g., for webinars) to a corporate standard.</li>
+                            <li><strong>Production & Hosting:</strong> Skilled in hosting webinars, running interviews, and using professional camera gear, microphones, and lighting for high-quality content.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/victorkhen/" target="_blank" class="footer-link cta">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:khenvictor@gmail.com" class="footer-link">
+                <i class="fa-solid fa-envelope"></i> Email Me
+            </a>
+        </div>
+        <div class="footer-copy">
+            &copy; <span id="current-year"></span> Victor Khen. Built from scratch.
+        </div>
+    </footer>
+
+    <script>
+        // --- Data for the entire dashboard ---
+
+        const animatedTaglines = [
+            'Building <strong class="c-blue">AI Network Fabrics</strong>',
+            'Driving <strong class="c-green">Telecom Disaggregation</strong>',
+            'Mastering <strong class="c-red">Partner Solution Marketing</strong>',
+            'From <strong class="c-yellow">Silicon to Solution</strong>'
+        ];
+
+        // --- UPDATED: Portfolio data ---
+        const portfolioData = [
+            // Priority: Solutions
+            {
+                id: "p10",
+                title: "Solution Brief: Data Center Clos Fabric",
+                url: "https://www.ipinfusion.com/solutions/data-center/dc-clos/",
+                category: "AI/DC Solution Brief",
+                catClass: "cat-ai",
+                tags: ["ai", "solution"],
+                metric: "Core Data Center Solution"
+            },
+            {
+                id: "p11",
+                title: "Solution Brief: Broadband Aggregation",
+                url: "https://www.ipinfusion.com/solutions/aggregation/broadband/",
+                category: "Telecom Solution Brief",
+                catClass: "cat-telecom",
+                tags: ["telecom", "solution"],
+                metric: "Key Aggregation Use Case"
+            },
+            {
+                id: "p2",
+                title: "Solution Brief: OcNOS AI Fabric for Data Centers",
+                url: "https://www.ipinfusion.com/solutions/data-center/ocnos-ai-fabric/",
+                category: "AI Solution Brief",
+                catClass: "cat-ai",
+                tags: ["ai", "solution"],
+                metric: "Drove 20% Partner Adoption"
+            },
+            {
+                id: "p8",
+                title: "Solution Brief: SR-MPLS Upgrade with OcNOS",
+                url: "https://www.ipinfusion.com/sr-mpls-upgrade-with-ocnos/",
+                category: "Telecom Solution Brief",
+                catClass: "cat-solution",
+                tags: ["telecom", "solution"],
+                metric: "Targeted Cisco ASR9K Refresh"
+            },
+            // REMOVED: p6 (400G)
+            
+            // REMOVED: v1, v2, v3 (Videos)
+
+            // Priority: Case Studies
+            {
+                id: "p4",
+                title: "Case Study: VA Telecom Transforms with Open Networking",
+                url: "https://www.ipinfusion.com/customer-story/va-telecom-transforms-telecommunications-with-advanced-open-networking-solutions-from-ip-infusion-and-pine-networks/",
+                category: "Case Study",
+                catClass: "cat-case-study",
+                tags: ["case-study", "telecom"],
+                metric: "Published Customer Win"
+            },
+            {
+                id: "p7",
+                title: "Case Study: Broadlinc Selects OcNOS for Rural Broadband",
+                url: "https://www.ipinfusion.com/customer-story/broadlinc-selects-ip-infusions-ocnos-and-rocnet-for-rural-broadband-expansion-in-kentucky/",
+                category: "Case Study",
+                catClass: "cat-case-study",
+                tags: ["case-study", "telecom"],
+                metric: "Secured Regional ISP Win"
+            },
+
+            // Priority: Strategy & Blogs
+            {
+                id: "p1",
+                title: "The AI Network Decision Framework: A Guide to Speed, ROI, and Strategic Freedom",
+                url: "https://www.ipinfusion.com/blogs/the-ai-network-decision-framework-a-guide-to-speed-roi-and-strategic-freedom/",
+                category: "AI Strategy Blog",
+                catClass: "cat-strategy",
+                tags: ["ai", "strategy"],
+                metric: "Top Performing Blog Q4"
+            },
+            // REMOVED: p3 (Competitive Brief)
+            {
+                id: "p9",
+                title: "Blog: Why CSPs Choose Disaggregated Transport Networks",
+                url: "httpss://www.ufispace.com/tw%C2%A0/company/blog/why-csp-choose-disaggregated-transport-networks",
+                category: "Telecom Strategy Blog",
+                catClass: "cat-strategy",
+                tags: ["telecom", "strategy"],
+                metric: "Authored Thought Leadership"
+            }
+        ];
+
+        // --- Experience data remains unchanged ---
+        const experienceData = [
+            {
+                date: "Aug 2023 - Present",
+                role: "Partner Marketing Manager",
+                company: "IP Infusion",
+                desc: [
+                    "Driving partner-led growth for open networking solutions (AI Fabric, Telecom Transport).",
+                    "Developing co-marketing strategies, technical collateral, and global campaigns.",
+                    "Creating sales enablement courses (Litmos) and tracking partner-led deals for case studies."
+                ]
+            },
+            {
+                date: "Dec 2021 - Aug 2023",
+                role: "Sr. Marketing Specialist",
+                company: "UfiSpace",
+                desc: [
+                    "Managed product marketing for disaggregated core, metro, and access network hardware.",
+                    "Translated complex telecom capabilities (SR-MPLS, OpenZR+) into clear business value.",
+                    "Project lead for Telecom Infra Project (TIP) DCSG interoperability and EANTC SR-MPLS/SRv6 testing."
+                ]
+            },
+            {
+                date: "Jul 2019 - Nov 2021",
+                role: "Sr. Sales Manager | UK, EMEA",
+                company: "QSAN",
+                desc: [
+                    "Led full-cycle channel sales, business development, and partner recruitment across the EMEA region.",
+                    "Focused on data storage solutions (NAS/SAN) for virtualization and enterprise data protection."
+                ]
+            },
+            {
+                date: "Mar 2016 - Feb 2018",
+                role: "Sr. Sales Manager",
+                company: "Unified Communications Startup",
+                desc: [
+                    "Managed sales and business development for IP PBX and SIP trunking solutions.",
+                    "Established a new market presence from the ground up."
+                ]
+            },
+            {
+                date: "Sep 2014 - Feb 2016",
+                role: "Sales Account Manager",
+                company: "ACTi Corporation",
+                desc: [
+                    "Began my network journey in IP video surveillance.",
+                    "Managed key accounts and learned the fundamentals of network infrastructure."
+                ]
+            }
+        ];
+
+        // --- Wait for the page to load ---
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. Initialize Animated Tagline ---
+            const slider = document.getElementById('tagline-slider');
+            if (slider) {
+                animatedTaglines.forEach(tag => {
+                    slider.innerHTML += `<span>${tag}</span>`;
+                });
+                
+                let currentTagline = 0;
+                setInterval(() => {
+                    currentTagline = (currentTagline + 1) % animatedTaglines.length;
+                    slider.style.transform = `translateY(-${currentTagline * 2.5}rem)`;
+                }, 5000); // Change every 5 seconds
+            }
+
+            // --- 2. Initialize Tabs & Header Nav ---
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const dashboardSection = document.getElementById('dashboard');
+            
+            // Function to switch tabs
+            function switchTab(tabTarget) {
+                // Update tab button active state
+                tabButtons.forEach(btn => {
+                    const isTarget = btn.getAttribute('data-tab') === tabTarget;
+                    btn.classList.toggle('active', isTarget);
+                    if(isTarget) {
+                        btn.setAttribute('aria-current', 'page');
+                    } else {
+                        btn.removeAttribute('aria-current');
+                    }
+                });
+                
+                // Update content active state
+                tabContents.forEach(content => {
+                    const isTarget = content.id === tabTarget;
+                    content.classList.toggle('active', isTarget);
+                });
+            }
+
+            // REMOVED: setActiveHeaderLink function (no longer needed)
+            
+            // Add click listener for the dashboard tabs
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabTarget = button.getAttribute('data-tab');
+                    switchTab(tabTarget);
+                    // REMOVED: Header link matching logic
+                });
+            });
+            
+            // REMOVED: Header navigation click listener
+
+
+            // --- 3. Initialize Work Portfolio ---
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            const filterChips = document.querySelectorAll('.filter-chip');
+
+            // --- Function to render portfolio cards ---
+            function renderPortfolioCards(filter = 'all') {
+                if (!portfolioGrid) return; 
+
+                portfolioGrid.innerHTML = '';
+                const filteredData = (filter === 'all')
+                    ? portfolioData
+                    : portfolioData.filter(item => item.tags.includes(filter));
+                
+                filteredData.forEach(item => {
+                    const card = document.createElement('a');
+                    card.className = 'card';
+                    card.href = item.url;
+                    card.target = '_blank';
+                    if (item.url === "#") {
+                        card.href = "javascript:void(0);";
+                        card.style.cursor = "default";
+                        card.target = '_self';
+                    }
+                    
+                    // REMOVED: Video image logic
+                    
+                    card.innerHTML = `
+                        <div class="card-content">
+                            <span class="card-category ${item.catClass}">${item.category}</span>
+                            <h3 class="card-title">${item.title}</h3>
+                            ${item.metric ? `
+                                <div class="card-metric">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    <span>${item.metric}</span>
+                                </div>
+                            ` : ''}
+                            <span class="card-link">
+                                ${item.url === "#" ? "Internal Document (Not Public)" : 'View Project <i class="fa-solid fa-arrow-right"></i>'}
+                            </span>
+                        </div>
+                    `;
+                    portfolioGrid.appendChild(card);
+                });
+            } // --- End of renderPortfolioCards function ---
+
+            // --- Event listener for filter chips ---
+            if (filterChips.length > 0) {
+                filterChips.forEach(chip => {
+                    chip.addEventListener('click', () => {
+                        const filterValue = chip.getAttribute('data-filter');
+                        
+                        filterChips.forEach(c => c.classList.remove('active'));
+                        chip.classList.add('active');
+                        
+                        const allCards = portfolioGrid.querySelectorAll('.card');
+                        allCards.forEach(c => c.classList.add('hide'));
+                        
+                        setTimeout(() => {
+                            renderPortfolioCards(filterValue);
+                        }, 300); 
+                    });
+                });
+            }
+            
+            // Render portfolio, as its tab is now active by default
+            renderPortfolioCards('all');
+
+            // --- 4. Initialize Experience Timeline ---
+            const experienceContainer = document.getElementById('experience-timeline');
+            function renderExperienceTimeline() {
+                if (experienceContainer) {
+                    experienceContainer.innerHTML = ''; 
+                    experienceData.forEach(item => {
+                        const descBullets = item.desc.map(line => `<li>${line}</li>`).join('');
+                        
+                        experienceContainer.innerHTML += `
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-date">${item.date}</div>
+                                <h3 class="timeline-role">${item.role}</h3>
+                                <h4 class="timeline-company">${item.company}</h4>
+                                <ul class="timeline-desc">${descBullets}</ul>
+                            </div>
+                        `;
+                    });
+                }
+            }
+            // Render experience so it's ready when clicked
+            renderExperienceTimeline(); 
+            
+            // --- 5. Set Current Year in Footer ---
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+
+</body>
+</html>
