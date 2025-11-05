@@ -186,6 +186,28 @@
             transform: translateY(-2px);
         }
 
+        /* NEW: Style for LinkedIn Stats */
+        .hero-stats {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--g-text-secondary);
+            margin-top: 1.5rem;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            max-width: 700px; /* Match other hero text */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        .hero-stats .fa-linkedin {
+            font-size: 1.25rem;
+            color: var(--g-blue);
+        }
+        .hero-stats strong {
+            color: var(--g-text-primary);
+            font-weight: 700;
+        }
+
         /* Hero Right - Progression Timeline */
         .hero-right {
             animation: fadeIn 1.2s ease-out 0.3s;
@@ -598,6 +620,11 @@
                 <a href="https://www.linkedin.com/in/victorkhen/" target="_blank" class="hero-cta">
                     Connect on LinkedIn <i class="fa-solid fa-arrow-right"></i>
                 </a>
+
+                <p class="hero-stats">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>Trusted by <strong>14,000+</strong> followers & averaging <strong>3,000+</strong> views per post.</span>
+                </p>
             </div>
             
             <div class="hero-right">
@@ -776,7 +803,7 @@
                 id: "v1",
                 title: "OcNOS 800G Lossless Ethernet Fabric for AI",
                 url: "https://www.youtube.com/watch?v=GxRz-GNKiCA",
-                category: "Promo Video",
+                category: "Promo Video", // UPDATED as requested
                 catClass: "cat-video",
                 tags: ["video", "ai"]
             },
@@ -846,7 +873,6 @@
             }
         ];
 
-        // --- UPDATED: experienceData for IP Infusion ---
         const experienceData = [
             {
                 date: "Aug 2023 - Present",
