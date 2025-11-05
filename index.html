@@ -49,63 +49,53 @@
             color: var(--g-text-primary);
             margin: 0;
             padding: 0;
+            font-size: 1rem; /* 16px */
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            /* UPDATED: Consistent rem padding */
             padding: 1.5rem;
         }
 
         h1, h2, h3, h4 {
             font-weight: 500;
             color: var(--g-text-primary);
-            /* UPDATED: Tighter heading line-height */
             line-height: 1.3;
+            margin-top: 0; 
         }
 
-        h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
-        /* UPDATED: Brighter 'Google Style' border & reduced margin */
-        h2 { font-size: 2rem; margin-top: 2.5rem; margin-bottom: 1.5rem; border-bottom: 3px solid var(--g-blue); padding-bottom: 0.5rem; }
-        h3 { font-size: 1.25rem; font-weight: 700; }
-        /* UPDATED: Normalized font-size */
-        p, ul { color: var(--g-text-secondary); max-width: 700px; font-size: 1rem; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 0.5rem; }
-
-        /* --- Header / Navigation --- */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap; /* Added for responsiveness */
-            /* UPDATED: Reduced padding */
-            padding: 1rem 2rem;
-            background: var(--g-bg-white);
-            border-bottom: 1px solid var(--g-border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-left {
-            display: flex;
-            flex-direction: column;
-        }
-        .header-logo {
-            font-size: 1.5rem;
+        h1 {
+            font-size: clamp(2.25rem, 1.8rem + 2vw, 3rem); /* 36px (mobile) -> 48px (desktop) */
             font-weight: 700;
-            color: var(--g-text-primary);
+            margin-bottom: 0.5rem;
         }
-        .header-tagline {
-            font-size: 0.9rem;
-            font-weight: 500;
+        
+        h2 {
+            font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2rem); /* 24px -> 32px */
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--g-blue);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.125rem, 1rem + 0.5vw, 1.25rem); /* 18px -> 20px */
+            font-weight: 700;
+        }
+
+        p, li {
+            font-size: 1rem; /* 16px */
             color: var(--g-text-secondary);
-            margin-top: -5px;
         }
+        ul {
+            padding-left: 20px;
+            margin-top: 0;
+        }
+        li { margin-bottom: 0.5rem; }
         
         /* --- Hero Section --- */
         .hero {
@@ -113,31 +103,49 @@
             grid-template-columns: 1fr;
             gap: 2rem;
             align-items: center;
-            /* UPDATED: Reduced padding */
-            padding: 3rem 2rem;
             background: var(--g-bg-white);
+            padding-top: 3rem;
+            padding-bottom: 3rem;
         }
         @media (min-width: 900px) {
             .hero {
                 grid-template-columns: 1.2fr 1fr;
-                /* UPDATED: Reduced padding */
-                padding: 4rem 2rem;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
             }
         }
         .hero-left {
             animation: slideInFromLeft 0.8s ease-out;
         }
+
+        .hero-subtagline {
+            font-size: clamp(1rem, 0.8rem + 0.75vw, 1.25rem); /* 16px -> 20px */
+            font-weight: 500;
+            color: var(--g-text-secondary);
+            margin-top: -0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p, .hero li {
+            font-size: 1.125rem; /* 18px */
+            max-width: 700px;
+        }
+        .hero ul {
+            max-width: 700px;
+        }
+
         .hero-outro {
-            font-size: 1.1rem;
+            font-size: 1.125rem; /* 18px */
             font-weight: 500;
             color: var(--g-text-primary);
             margin-top: 1.5rem;
         }
+        
         .hero-tagline {
-            font-size: 1.75rem;
+            font-size: clamp(1.25rem, 1rem + 1.25vw, 1.75rem); /* 20px -> 28px */
             font-weight: 300;
             color: var(--g-text-primary);
-            height: 2.5rem; /* Height of one line */
+            height: 2.5rem; 
             overflow: hidden;
             margin: 1rem 0;
         }
@@ -149,7 +157,7 @@
         .tagline-slider span {
             display: flex;
             align-items: center;
-            height: 2.5rem;
+            height: 2.5rem; /* Match parent height */
             gap: 0.75rem;
         }
         .tagline-slider .fa-solid {
@@ -190,7 +198,6 @@
         }
         .progression-item {
             position: relative;
-            /* UPDATED: Tightened timeline spacing */
             margin-bottom: 1.25rem;
         }
         .progression-item:last-child {
@@ -223,9 +230,8 @@
             color: var(--g-text-secondary);
         }
 
-        /* --- NEW: Testimonials Section --- */
+        /* --- Testimonials Section --- */
         #testimonials {
-            /* UPDATED: Reduced padding */
             padding: 2.5rem 0;
             background-color: var(--g-bg-white);
         }
@@ -268,8 +274,7 @@
 
         /* --- Main Dashboard (Tabs) --- */
         #dashboard {
-            /* NEW: Added scroll-margin-top */
-            scroll-margin-top: 100px;
+            scroll-margin-top: 20px;
         }
         .tabs {
             display: flex;
@@ -383,6 +388,7 @@
         .cat-case-study { color: var(--g-red); }
         .cat-strategy { color: var(--g-yellow); }
         .cat-solution { color: #8e44ad; } /* Purple */
+        .cat-video { color: #E67E22; } /* Orange */
 
         .card-title {
             font-size: 1.2rem;
@@ -391,23 +397,12 @@
             flex-grow: 1;
             margin-bottom: 1rem;
         }
-        .card-metric {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--g-green);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .card-metric .fa-solid {
-            font-size: 0.9rem;
-        }
 
         .card-link {
             font-weight: 500;
             color: var(--g-blue);
             text-decoration: none;
+            margin-top: auto; 
         }
         .card-link i {
             margin-left: 0.25rem;
@@ -479,7 +474,6 @@
 
         /* --- Tab 3: Skills & Capabilities --- */
         .skill-group {
-            /* UPDATED: Tightened spacing */
             margin-bottom: 2rem;
         }
         .skill-group:last-child {
@@ -514,10 +508,9 @@
         }
 
 
-        /* --- NEW: Footer --- */
+        /* --- Footer --- */
         .footer {
             text-align: center;
-            /* UPDATED: Reduced padding and margin */
             padding: 2rem;
             margin-top: 3rem;
             background: var(--g-bg-white);
@@ -581,15 +574,12 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="header-left">
-            <div class="header-logo">Victor Khen</div>
-            <div class="header-tagline">Partner & Technical Marketing | AI Fabric | Telecom Networks</div>
-        </div>
-        </header>
-
     <main>
-        <section class="hero" id="hero"> <div class="hero-left">
+        <section class="hero container" id="hero"> 
+            <div class="hero-left">
+                <h1>Victor Khen</h1>
+                <h2 class="hero-subtagline">Partner & Technical Marketing | AI Fabric | Telecom Networks</h2>
+
                 <div class="hero-tagline">
                     <div class="tagline-slider" id="tagline-slider">
                         </div>
@@ -640,21 +630,21 @@
                         <p class="testimonial-text">"Victor is incredibly bright and simply gets things done. During our time at IP Infusion, Victor was my team's Marketing partner and he consistently delivered. Always up to the task, Victor eagerly took on new initiatives and executed on time and with quality..."</p>
                         <div class="testimonial-author">
                             <span class="testimonial-author-name">Craig Schaefer</span>
-                            <span class="testimonial-author-title">Vice President of Channel Sales of IP Infusion | During his work with Victor Khen</span>
+                            <span class="testimonial-author-title">Vice President of Channel Sales, IP Infusion</span>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <p class="testimonial-text">"Victor is a dynamic and creative marketing professional whose energy never fades. Bold in pursuing goals and inventive in his campaigns, he inspires those around him to think bigger and act faster."</p>
                         <div class="testimonial-author">
                             <span class="testimonial-author-name">Nicole Chen</span>
-                            <span class="testimonial-author-title">Chief Marketing Officer of UfiSpace | During her work with Victor Khen</span>
+                            <span class="testimonial-author-title">Chief Marketing Officer, UfiSpace</span>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <p class="testimonial-text">"Victor is a highly driven and aggressive sales professional who played a key role in growing company's business during his time with us. He's not only results-oriented but also a great team player who brings creative solutions to overcome challenges."</p>
                         <div class="testimonial-author">
                             <span class="testimonial-author-name">Steven Lin</span>
-                            <span class="testimonial-author-title">VP, Sales and Marketing of QSAN | During his work with Victor Khen</span>
+                            <span class="testimonial-author-title">VP, Sales and Marketing, QSAN</span>
                         </div>
                     </div>
                      </div>
@@ -688,10 +678,13 @@
                             <i class="fa-solid fa-star"></i> All Work
                         </button>
                         <button class="filter-chip" data-filter="solution">
-                            <i class="fa-solid fa-file-alt"></i> Solution Briefs
+                            <i class="fa-solid fa-file-alt"></i> Solution Pages
                         </button>
                         <button class="filter-chip" data-filter="case-study">
                             <i class="fa-solid fa-user-check"></i> Case Studies
+                        </button>
+                        <button class="filter-chip" data-filter="video">
+                            <i class="fa-solid fa-video"></i> Videos & Webinars
                         </button>
                         <button class="filter-chip" data-filter="strategy">
                             <i class="fa-solid fa-lightbulb"></i> Strategy & Blogs
@@ -712,42 +705,43 @@
                     <div class="skill-group">
                         <h3 class="skill-heading">
                             <i class="fa-solid fa-brain"></i>
-                            <span>Full-Stack Technical Expertise</span>
+                            <span>Technical & Domain Expertise</span>
                         </h3>
-                        <p>Technical knowledge is grounded in hands-on experience, from the silicon level to the application layer.</p>
+                        <p>My marketing expertise is built on a foundation of hands-on technical validation and broad domain knowledge, from silicon to carrier-grade architecture.</p>
                         <ul>
-                            <li><strong>Broad Domain Knowledge:</strong> Enterprise Networking, Telecom (DAA, FTTx, xhaul, RAN), Optical (IPoDWDM), Data Center Fabric, and Storage (SAN/NAS/Object).</li>
-                            <li><strong>Hands-On Validation:</strong> Ability to test NOS using VM instances, practice with CLI, and deploy network storage, networking, and server gear.</li>
-                            <li><strong>Project Leadership:</strong> Served as project lead for Telecom Infra Project (TIP) DCSG interoperability and supported EANTC SR-MPLS/SRv6 testing.</li>
-                            <li><strong>Partner Integration:</strong> Fully capable of discussing and planning complex technical integrations standalone with partners.</li>
+                            <li><strong>Broad Domain Knowledge:</strong> Deep expertise in Data Center/AI Fabric, Telecom (FTTx, xHaul, RAN, Aggregation), Optical (IPoDWDM), and Enterprise Storage (SAN/NAS).</li>
+                            <li><strong>Hands-On Validation:</strong> Proficient in testing and deploying network gear, including NOS VMs, CLI validation, and server/storage configurations.</li>
+                            <li><strong>Technical Leadership:</strong> Served as project lead for Telecom Infra Project (TIP) DCSG interoperability and supported EANTC SR-MPLS/SRv6 testing.</li>
+                            <li><strong>Partner Integration:</strong> Fully capable of discussing and planning complex technical solution integrations standalone with partner engineering teams.</li>
                         </ul>
                     </div>
 
                     <div class="skill-group">
                         <h3 class="skill-heading">
                             <i class="fa-solid fa-handshake"></i>
-                            <span>Partner & Channel Champion</span>
+                            <span>GTM & Partner Strategy</span>
                         </h3>
-                        <p>Proven ability to build and manage the entire partner lifecycle, from C-level relationships to program execution.</p>
+                        <p>I specialize in building and executing full-lifecycle partner and channel strategies, from C-level relationship-building to in-field sales enablement.</p>
                         <ul>
-                            <li><strong>GTM & Sales:</strong> Years of experience in channel sales, business development, solution selling, and ecosystem partner development across the EMEA region.</li>
-                            <li><strong>Program Management:</strong> Proven ability to plan and run complete channel partner programs, including partner rebates, benefits, and sales enablement (Litmos, etc.).</li>
-<li><strong>Relationship Building:</strong> Maintain good relations with global hardware/software vendors, national DC operators, and C-level executives in Taiwan and Europe.</li>
-                            <li><strong>Logistics & Events:</strong> Experienced in planning and designing trade show booths (messaging, graphics, topologies) and managing marketing logistics (giveaways).</li>
+                            <li><strong>Ecosystem Development:</strong> Proven experience in channel sales, business development, and solution selling, cultivating relationships with vendors, partners, and operators across EMEA.</li>
+                            <li><strong>C-Level & Key Relations:</strong> Maintain strong relationships with C-level hardware executives in Taiwan/Europe and key national data center operators.</li>
+                            <li><strong>Partner Program Management:</strong> Designed and managed complete channel programs, including partner portals, rebates, benefits, and deal tracking for case studies.</li>
+                            <li><strong>Sales Enablement:</strong> Develop comprehensive sales enablement courses and quizzes (e.g., Litmos) to empower partner and internal sales teams.</li>
                         </ul>
                     </div>
 
                     <div class="skill-group">
                         <h3 class="skill-heading">
                             <i class="fa-solid fa-file-powerpoint"></i>
-                            <span>End-to-End Content Producer</span>
+                            <span>Content & Marketing Execution</span>
                         </h3>
-                        <p>A "full-stack" marketer owning the entire content pipeline, from initial research to final production, with no hand-offs required.</p>
+                        <p>A "full-stack" marketer owning the entire content pipeline—from initial research and technical translation to final production and promotion, with no hand-offs required.</p>
                         <ul>
-                            <li><strong>Strategy:</strong> Ability to translate complex R&D and product messaging into clear, marketable GTM messaging.</li>
-                            <li><strong>Full-Stack Design:</strong> Personally creates all assets: technical solution briefs, case studies, high-skill presentations (PPTX), and print/PDF design.</li>
-                            <li><strong>Web & Video:</strong> Creates complete HTML solution pages from scratch and handles all video editing (e.g., for webinars) to a corporate standard.</li>
-                            <li><strong>Production & Hosting:</strong> Skilled in hosting webinars, running interviews, and using professional camera gear, microphones, and lighting for high-quality content.</li>
+                            <li><strong>Product Messaging:</strong> Expert in translating complex R&D concepts and technical features into clear, marketable GTM messaging and value propositions.</li>
+                            <li><strong>Full-Stack Design:</strong> Personally create all assets: high-skill presentations (PPTX), technical solution briefs, case studies, and print/PDF layouts.</li>
+                            <li><strong>Web & Video Production:</strong> Develop complete HTML solution pages from scratch and handle all video editing (webinars, interviews) to a corporate standard.</li>
+                            <li><strong>Studio & Hosting:</strong> Skilled in hosting webinars, running interviews, and using professional camera, lighting, and audio equipment for high-quality content.</li>
+                            <li><strong>Event & Logistics:</strong> Extensive experience designing and executing trade show booths (messaging, graphics, topologies) and managing global marketing logistics.</li>
                         </ul>
                     </div>
 
@@ -777,101 +771,94 @@
             'From <strong class="c-yellow">Silicon to Solution</strong>'
         ];
 
-        // --- UPDATED: Portfolio data ---
         const portfolioData = [
-            // Priority: Solutions
+            {
+                id: "v1",
+                title: "OcNOS 800G Lossless Ethernet Fabric for AI",
+                url: "https://www.youtube.com/watch?v=GxRz-GNKiCA",
+                category: "Video & Webinar",
+                catClass: "cat-video",
+                tags: ["video", "ai"]
+            },
             {
                 id: "p10",
-                title: "Solution Brief: Data Center Clos Fabric",
+                title: "Data Center Clos Fabric",
                 url: "https://www.ipinfusion.com/solutions/data-center/dc-clos/",
-                category: "AI/DC Solution Brief",
+                category: "AI/DC Solution Page",
                 catClass: "cat-ai",
-                tags: ["ai", "solution"],
-                metric: "Core Data Center Solution"
+                tags: ["ai", "solution"]
             },
             {
                 id: "p11",
-                title: "Solution Brief: Broadband Aggregation",
+                title: "Broadband Aggregation",
                 url: "https://www.ipinfusion.com/solutions/aggregation/broadband/",
-                category: "Telecom Solution Brief",
+                category: "Telecom Solution Page",
                 catClass: "cat-telecom",
-                tags: ["telecom", "solution"],
-                metric: "Key Aggregation Use Case"
+                tags: ["telecom", "solution"]
             },
             {
                 id: "p2",
-                title: "Solution Brief: OcNOS AI Fabric for Data Centers",
+                title: "OcNOS AI Fabric for Data Centers",
                 url: "https://www.ipinfusion.com/solutions/data-center/ocnos-ai-fabric/",
-                category: "AI Solution Brief",
+                category: "AI Solution Page",
                 catClass: "cat-ai",
-                tags: ["ai", "solution"],
-                metric: "Drove 20% Partner Adoption"
+                tags: ["ai", "solution"]
             },
             {
                 id: "p8",
-                title: "Solution Brief: SR-MPLS Upgrade with OcNOS",
+                title: "SR-MPLS Upgrade with OcNOS",
                 url: "https://www.ipinfusion.com/sr-mpls-upgrade-with-ocnos/",
                 category: "Telecom Solution Brief",
                 catClass: "cat-solution",
-                tags: ["telecom", "solution"],
-                metric: "Targeted Cisco ASR9K Refresh"
+                tags: ["telecom", "solution"]
             },
-            // REMOVED: p6 (400G)
-            
-            // REMOVED: v1, v2, v3 (Videos)
-
-            // Priority: Case Studies
             {
                 id: "p4",
-                title: "Case Study: VA Telecom Transforms with Open Networking",
+                title: "VA Telecom Transforms with Open Networking",
                 url: "https://www.ipinfusion.com/customer-story/va-telecom-transforms-telecommunications-with-advanced-open-networking-solutions-from-ip-infusion-and-pine-networks/",
                 category: "Case Study",
                 catClass: "cat-case-study",
-                tags: ["case-study", "telecom"],
-                metric: "Published Customer Win"
+                tags: ["case-study", "telecom"]
             },
             {
                 id: "p7",
-                title: "Case Study: Broadlinc Selects OcNOS for Rural Broadband",
+                title: "Broadlinc Selects OcNOS for Rural Broadband",
                 url: "https://www.ipinfusion.com/customer-story/broadlinc-selects-ip-infusions-ocnos-and-rocnet-for-rural-broadband-expansion-in-kentucky/",
                 category: "Case Study",
                 catClass: "cat-case-study",
-                tags: ["case-study", "telecom"],
-                metric: "Secured Regional ISP Win"
+                tags: ["case-study", "telecom"]
             },
-
-            // Priority: Strategy & Blogs
             {
                 id: "p1",
                 title: "The AI Network Decision Framework: A Guide to Speed, ROI, and Strategic Freedom",
                 url: "https://www.ipinfusion.com/blogs/the-ai-network-decision-framework-a-guide-to-speed-roi-and-strategic-freedom/",
                 category: "AI Strategy Blog",
                 catClass: "cat-strategy",
-                tags: ["ai", "strategy"],
-                metric: "Top Performing Blog Q4"
+                tags: ["ai", "strategy"]
             },
-            // REMOVED: p3 (Competitive Brief)
             {
                 id: "p9",
-                title: "Blog: Why CSPs Choose Disaggregated Transport Networks",
-                url: "httpss://www.ufispace.com/tw%C2%A0/company/blog/why-csp-choose-disaggregated-transport-networks",
+                title: "Why CSPs Choose Disaggregated Transport Networks",
+                url: "httpss://www.ufispace.com/tw/company/blog/why-csp-choose-disaggregated-transport-networks",
                 category: "Telecom Strategy Blog",
                 catClass: "cat-strategy",
-                tags: ["telecom", "strategy"],
-                metric: "Authored Thought Leadership"
+                tags: ["telecom", "strategy"]
             }
         ];
 
-        // --- Experience data remains unchanged ---
+        // --- UPDATED: experienceData for IP Infusion ---
         const experienceData = [
             {
                 date: "Aug 2023 - Present",
                 role: "Partner Marketing Manager",
                 company: "IP Infusion",
                 desc: [
-                    "Driving partner-led growth for open networking solutions (AI Fabric, Telecom Transport).",
-                    "Developing co-marketing strategies, technical collateral, and global campaigns.",
-                    "Creating sales enablement courses (Litmos) and tracking partner-led deals for case studies."
+                    "Drove partner-led growth by developing co-marketing strategies, global campaigns, and joint solution collateral for AI Fabric & Telecom.",
+                    "Owned end-to-end content creation: built and maintained key HTML solution pages, produced solution briefs, and managed all corporate presentation messaging.",
+                    "Managed the full partner enablement lifecycle, creating sales courses (Litmos), certification quizzes, and technical videos.",
+                    "Strengthened ecosystem relations through regular partner webinars, technical calls, and communication programs.",
+                    "Provided actionable market intelligence to sales teams on competitor activity, new project deployments, and market trends.",
+                    "Tracked partner-led deals and managed customer interviews to build a pipeline of public-facing case studies."
                 ]
             },
             {
@@ -927,17 +914,14 @@
                 setInterval(() => {
                     currentTagline = (currentTagline + 1) % animatedTaglines.length;
                     slider.style.transform = `translateY(-${currentTagline * 2.5}rem)`;
-                }, 5000); // Change every 5 seconds
+                }, 5000); 
             }
 
-            // --- 2. Initialize Tabs & Header Nav ---
+            // --- 2. Initialize Tabs ---
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
-            const dashboardSection = document.getElementById('dashboard');
             
-            // Function to switch tabs
             function switchTab(tabTarget) {
-                // Update tab button active state
                 tabButtons.forEach(btn => {
                     const isTarget = btn.getAttribute('data-tab') === tabTarget;
                     btn.classList.toggle('active', isTarget);
@@ -948,26 +932,19 @@
                     }
                 });
                 
-                // Update content active state
                 tabContents.forEach(content => {
                     const isTarget = content.id === tabTarget;
                     content.classList.toggle('active', isTarget);
                 });
             }
-
-            // REMOVED: setActiveHeaderLink function (no longer needed)
             
-            // Add click listener for the dashboard tabs
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const tabTarget = button.getAttribute('data-tab');
                     switchTab(tabTarget);
-                    // REMOVED: Header link matching logic
                 });
             });
             
-            // REMOVED: Header navigation click listener
-
 
             // --- 3. Initialize Work Portfolio ---
             const portfolioGrid = document.getElementById('portfolio-grid');
@@ -993,25 +970,17 @@
                         card.target = '_self';
                     }
                     
-                    // REMOVED: Video image logic
-                    
                     card.innerHTML = `
                         <div class="card-content">
                             <span class="card-category ${item.catClass}">${item.category}</span>
                             <h3 class="card-title">${item.title}</h3>
-                            ${item.metric ? `
-                                <div class="card-metric">
-                                    <i class="fa-solid fa-chart-line"></i>
-                                    <span>${item.metric}</span>
-                                </div>
-                            ` : ''}
                             <span class="card-link">
                                 ${item.url === "#" ? "Internal Document (Not Public)" : 'View Project <i class="fa-solid fa-arrow-right"></i>'}
                             </span>
                         </div>
                     `;
                     portfolioGrid.appendChild(card);
-                });
+                }); 
             } // --- End of renderPortfolioCards function ---
 
             // --- Event listener for filter chips ---
@@ -1033,7 +1002,7 @@
                 });
             }
             
-            // Render portfolio, as its tab is now active by default
+            // Render portfolio
             renderPortfolioCards('all');
 
             // --- 4. Initialize Experience Timeline ---
@@ -1056,7 +1025,7 @@
                     });
                 }
             }
-            // Render experience so it's ready when clicked
+            // Render experience
             renderExperienceTimeline(); 
             
             // --- 5. Set Current Year in Footer ---
