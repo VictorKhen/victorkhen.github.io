@@ -186,7 +186,6 @@
             transform: translateY(-2px);
         }
 
-        /* NEW: Style for LinkedIn Stats */
         .hero-stats {
             font-size: 0.9rem;
             font-weight: 500;
@@ -196,8 +195,8 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            max-width: 700px; /* Match other hero text */
-            flex-wrap: wrap; /* Allow wrapping on small screens */
+            max-width: 700px; 
+            flex-wrap: wrap; 
         }
         .hero-stats .fa-linkedin {
             font-size: 1.25rem;
@@ -798,12 +797,13 @@
             'From <strong class="c-yellow">Silicon to Solution</strong>'
         ];
 
+        // --- UPDATED: Portfolio data (category fix) ---
         const portfolioData = [
             {
                 id: "v1",
                 title: "OcNOS 800G Lossless Ethernet Fabric for AI",
                 url: "https://www.youtube.com/watch?v=GxRz-GNKiCA",
-                category: "Promo Video", // UPDATED as requested
+                category: "Promo Video", // UPDATED
                 catClass: "cat-video",
                 tags: ["video", "ai"]
             },
@@ -873,18 +873,19 @@
             }
         ];
 
+        // --- UPDATED: experienceData with new metrics and scope ---
         const experienceData = [
             {
                 date: "Aug 2023 - Present",
                 role: "Partner Marketing Manager",
                 company: "IP Infusion",
                 desc: [
-                    "Drove partner-led growth by developing co-marketing strategies, global campaigns, and joint solution collateral for AI Fabric & Telecom.",
+                    "Drove partner-led growth on a global scale (Americas, EMEA, APAC), developing co-marketing strategies that contributed to 20-40% YoY revenue growth from focus partners.",
+                    "Architected the entire partner sales enablement program from scratch in under 4 months.",
+                    "Achieved 80% training adoption by focus partners within the first year, securing C-level buy-in that resulted in new partner teams joining monthly.",
+                    "Led demand-gen by planning and creating joint solution collateral (briefs, app notes) with a new ecosystem of tech partners (DDoS, RAN, FWA, FTTH).",
                     "Owned end-to-end content creation: built and maintained key HTML solution pages, produced solution briefs, and managed all corporate presentation messaging.",
-                    "Managed the full partner enablement lifecycle, creating sales courses (Litmos), certification quizzes, and technical videos.",
-                    "Strengthened ecosystem relations through regular partner webinars, technical calls, and communication programs.",
-                    "Provided actionable market intelligence to sales teams on competitor activity, new project deployments, and market trends.",
-                    "Tracked partner-led deals and managed customer interviews to build a pipeline of public-facing case studies."
+                    "Provided actionable market intelligence to sales on competitor activity, new deployments, and emerging partner opportunities."
                 ]
             },
             {
@@ -902,8 +903,9 @@
                 role: "Sr. Sales Manager | UK, EMEA",
                 company: "QSAN",
                 desc: [
-                    "Led full-cycle channel sales, business development, and partner recruitment across the EMEA region.",
-                    "Focused on data storage solutions (NAS/SAN) for virtualization and enterprise data protection."
+                    "Managed full-cycle channel sales and partner recruitment for the entire EMEA region, supporting 30+ distributors and dozens of SIs/resellers.",
+                    "Drove solution selling for (NAS/SAN) data storage, developing partner training, running co-marketing campaigns, and supporting joint event execution.",
+                    "Successfully established and grew the QSAN brand presence in new territories through strategic partner development."
                 ]
             },
             {
