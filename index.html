@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Khen | Portfolio Dashboard</title>
+    <title>Victor Khen | Partner & Technical Marketing</title>
 
     <meta name="description" content="Victor Khen - Partner & Technical Marketing Manager specializing in AI Fabric, Telecom, and Open Networking. Portfolio showcasing solution briefs, case studies, and GTM strategies.">
     <meta name="keywords" content="AI Fabric, Telecom, Partner Marketing, Technical Marketing, Open Networking, Victor Khen, GTM Strategy, Solution Briefs">
@@ -11,7 +11,7 @@
     <meta property="og:description" content="From Silicon to Solution. Partner Marketing for AI Fabric & Telecom.">
     <meta property="og:image" content="https://placehold.co/1200x630/4285F4/ffffff?text=Victor+Khen&font=roboto">
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%234285F4%22/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%233B82F6%22/></svg>">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,308 +19,375 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        /* --- CSS Root Variables (Google's Color Palette) --- */
+        /* --- Root Variables: Tech-Premium Palette (From Option 1) --- */
         :root {
-            --g-blue: #4285F4;
-            --g-red: #DB4437;
-            --g-yellow: #F4B400;
-            --g-green: #0F9D58;
-            --g-text-primary: #202124;
-            --g-text-secondary: #5f6368;
-            --g-bg-light: #f8f9fa;
-            --g-bg-white: #ffffff;
-            --g-border: #dfe1e5;
-            --g-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
-            --g-shadow-hover: 0 4px 8px 0 rgba(60,64,67,.3), 0 6px 20px 0 rgba(60,64,67,.19);
+            --accent-blue: #3B82F6;
+            --accent-blue-dark: #2563EB;
+            --text-primary: #111827;
+            --text-secondary: #4B5563;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #E5E7EB;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --header-height: 70px;
         }
 
-        /* --- Base & Typography --- */
+        /* --- Base & Typography (From Option 1) --- */
         *, *::before, *::after {
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: var(--g-bg-light);
-            color: var(--g-text-primary);
+            background-color: var(--bg-light);
+            color: var(--text-primary);
             margin: 0;
             padding: 0;
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
         .container {
-            max-width: 1400px;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 1.5rem;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 500;
-            color: var(--g-text-primary);
-            line-height: 1.3;
-            margin-top: 0; 
-        }
-
-        h1 {
-            font-size: clamp(2.25rem, 1.8rem + 2vw, 3rem); /* 36px (mobile) -> 48px (desktop) */
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            padding: 0 1.5rem;
         }
         
-        h2 {
-            font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2rem); /* 24px -> 32px */
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid var(--g-blue);
-            padding-bottom: 0.5rem;
+        /* Section Base Style */
+        .content-section {
+            padding-top: clamp(3rem, 1rem + 8vw, 6rem);
+            padding-bottom: clamp(3rem, 1rem + 8vw, 6rem);
+            overflow: hidden; /* Contains animations */
         }
-        
-        h3 {
-            font-size: clamp(1.125rem, 1rem + 0.5vw, 1.25rem); /* 18px -> 20px */
-            font-weight: 700;
+        .content-section:nth-of-type(odd) {
+            background-color: var(--bg-white);
         }
 
-        p, li {
-            font-size: 1rem; /* 16px */
-            color: var(--g-text-secondary);
-        }
-        ul {
-            padding-left: 20px;
+        /* Animated Section Header */
+        h2.section-header {
+            font-size: clamp(2rem, 1.5rem + 2vw, 3rem); /* 32px -> 48px */
+            font-weight: 700;
             margin-top: 0;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
         }
-        li { margin-bottom: 0.5rem; }
+        h2.section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background-color: var(--accent-blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+        }
+        .is-visible h2.section-header::after {
+            transform: scaleX(1);
+        }
+
+        h3 { font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); font-weight: 500; }
+        h4 { font-size: 1.15rem; font-weight: 500; }
+        p, li { font-size: 1rem; color: var(--text-secondary); }
+        ul { padding-left: 20px; }
+
+        /* --- Header / Navigation (From Option 1) --- */
+        .main-header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+        .header-content {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         
-        /* --- Hero Section --- */
+        .header-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            opacity: 0; /* Hidden by default */
+            transform: translateY(-5px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .header-logo.is-visible {
+            opacity: 1; /* Fades in */
+            transform: translateY(0);
+        }
+        .header-nav {
+            display: flex;
+        }
+        .nav-link.cta {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .nav-link.cta:hover {
+            background-color: var(--accent-blue-dark);
+            box-shadow: var(--shadow-md);
+        }
+        .nav-link.cta .fa-brands {
+            margin-right: 0.5rem;
+        }
+
+        /* --- Hero Section (From Option 1) --- */
         .hero {
+            min-height: calc(100vh - var(--header-height));
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-white);
+            overflow: hidden;
+            position: relative;
+        }
+        .hero .container {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
             align-items: center;
-            background: var(--g-bg-white);
-            padding-top: 3rem;
-            padding-bottom: 3rem;
         }
         @media (min-width: 900px) {
-            .hero {
-                grid-template-columns: 1.2fr 1fr;
-                padding-top: 4rem;
-                padding-bottom: 4rem;
+            .hero .container {
+                grid-template-columns: 1.1fr 1fr;
+                gap: 3rem;
             }
         }
-        .hero-left {
-            animation: slideInFromLeft 0.8s ease-out;
+        .hero-left h1 {
+            font-size: clamp(2.75rem, 2rem + 3vw, 4.5rem); /* 44px -> 72px */
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.1;
+            color: var(--text-primary);
         }
-
         .hero-subtagline {
-            font-size: clamp(1rem, 0.8rem + 0.75vw, 1.25rem); /* 16px -> 20px */
-            font-weight: 500;
-            color: var(--g-text-secondary);
-            margin-top: -0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p, .hero li {
-            font-size: 1.125rem; /* 18px */
-            max-width: 700px;
-        }
-        .hero ul {
-            max-width: 700px;
-        }
-
-        .hero-outro {
-            font-size: 1.125rem; /* 18px */
-            font-weight: 500;
-            color: var(--g-text-primary);
-            margin-top: 1.5rem;
+            font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem); /* 20px -> 28px */
+            font-weight: 300;
+            color: var(--text-primary);
+            margin: 0 0 1.5rem 0;
         }
         
-        .hero-tagline {
-            font-size: clamp(1.25rem, 1rem + 1.25vw, 1.75rem); /* 20px -> 28px */
-            font-weight: 300;
-            color: var(--g-text-primary);
-            height: 2.5rem; 
-            overflow: hidden;
-            margin: 1rem 0;
+        /* Hero Pillars */
+        .hero-pillars {
+            margin: 2rem 0;
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 1.5rem;
         }
-        .tagline-slider {
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        .hero-pillars li {
+            margin-bottom: 0;
         }
-        .tagline-slider span {
+        .pillar-header {
             display: flex;
             align-items: center;
-            height: 2.5rem; /* Match parent height */
             gap: 0.75rem;
+            margin-bottom: 0.5rem;
         }
-        .tagline-slider .fa-solid {
-            font-size: 1.5rem;
+        .pillar-header i {
+            font-size: 0.875rem; /* Smaller icon */
+            color: var(--accent-blue);
+            background-color: #DBEAFE; /* Light blue bg */
+            padding: 6px; /* Tighter padding */
+            border-radius: 50%;
+            width: 28px; /* Smaller circle */
+            height: 28px; /* Smaller circle */
+            text-align: center;
+            flex-shrink: 0;
         }
-        .tagline-slider .c-blue { color: var(--g-blue); }
-        .tagline-slider .c-red { color: var(--g-red); }
-        .tagline-slider .c-green { color: var(--g-green); }
-        .tagline-slider .c-yellow { color: var(--g-yellow); }
+        .pillar-header strong {
+            font-size: 1.125rem; /* 18px */
+            color: var(--text-primary);
+        }
+        .hero-pillars p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 0 0 0 40px; /* Aligns with text */
+        }
 
         .hero-cta {
             display: inline-block;
-            background-color: var(--g-blue);
+            background-color: var(--accent-blue);
             color: white;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 500;
             text-decoration: none;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: 8px;
-            margin-top: 1rem;
             transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
+            margin-top: 1.5rem; /* Added margin */
+            cursor: pointer; /* Ensures it looks clickable */
         }
         .hero-cta:hover {
-            box-shadow: var(--g-shadow);
+            background-color: var(--accent-blue-dark);
+            box-shadow: var(--shadow-lg);
             transform: translateY(-2px);
         }
-
-        .hero-stats {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--g-text-secondary);
-            margin-top: 1.5rem;
-            margin-bottom: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            max-width: 700px; 
-            flex-wrap: wrap; 
+        
+        /* Hero Right - Impact Grid */
+        .hero-impact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
-        .hero-stats .fa-linkedin {
-            font-size: 1.25rem;
-            color: var(--g-blue);
+        .hero-impact-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
         }
-        .hero-stats strong {
-            color: var(--g-text-primary);
-            font-weight: 700;
+        .hero-impact-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
         }
-
-        /* Hero Right - Progression Timeline */
-        .hero-right {
-            animation: fadeIn 1.2s ease-out 0.3s;
-            animation-fill-mode: backwards;
+        
+        .hero-impact-card .icon {
+            font-size: 1rem; /* Smaller icon */
+            color: var(--accent-blue);
+            background: #DBEAFE;
+            padding: 7px; /* Tighter padding */
+            border-radius: 6px; /* Tighter radius */
+            margin-bottom: 0.75rem;
+            display: inline-block;
         }
-        .progression-timeline {
-            position: relative;
-            padding-left: 40px;
-            border-left: 3px solid var(--g-border);
+        .hero-impact-card.cat-red .icon {
+             color: #DC2626; /* Tailwind Red */
+             background: #FEE2E2;
         }
-        .progression-item {
-            position: relative;
-            margin-bottom: 1.25rem;
-        }
-        .progression-item:last-child {
-            margin-bottom: 0;
-        }
-        .progression-item::before {
-            content: '';
-            position: absolute;
-            left: -48px;
-            top: 2px;
-            width: 14px;
-            height: 14px;
-            background: var(--g-bg-white);
-            border: 3px solid var(--g-blue);
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .progression-item.current::before {
-            background: var(--g-blue);
-            animation: pulse 2s infinite;
-        }
-        .progression-item h4 {
+        .hero-impact-card h3 {
             font-size: 1.1rem;
             font-weight: 700;
-            margin: 0 0 0.25rem 0;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
         }
-        .progression-item p {
-            font-size: 0.9rem;
-            margin: 0;
-            color: var(--g-text-secondary);
+        .hero-impact-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        .hero-impact-card.social-proof {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
+            color: white;
+        }
+        .hero-impact-card.social-proof:hover {
+             box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+        }
+        .hero-impact-card.social-proof .icon {
+            color: white;
+            background: rgba(255,255,255,0.2);
+            font-size: 1rem; /* Smaller icon */
+        }
+        .hero-impact-card.social-proof h3,
+        .hero-impact-card.social-proof p {
+            color: white;
+        }
+        .hero-impact-card.social-proof strong {
+            color: #FDE047; /* Tailwind Yellow */
         }
 
-        /* --- Testimonials Section --- */
+        /* --- Testimonials Section (From Option 1) --- */
         #testimonials {
-            padding: 2.5rem 0;
-            background-color: var(--g-bg-white);
+            background-color: var(--bg-light); /* Swapped to light for contrast with dashboard */
         }
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1.5rem;
         }
+        @media (min-width: 600px) {
+            .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 900px) {
+            .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
         .testimonial-card {
-            background: var(--g-bg-light);
-            border: 1px solid var(--g-border);
+            background: var(--bg-white); /* Cards are white */
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
         }
         .testimonial-text {
-            font-size: 0.95rem;
-            color: var(--g-text-secondary);
+            font-size: 1rem;
+            color: var(--text-secondary);
             font-style: italic;
-            margin: 0 0 1rem 0;
+            margin: 0 0 1.5rem 0;
             flex-grow: 1;
-            border-left: 3px solid var(--g-blue);
+            border-left: 3px solid var(--accent-blue);
             padding-left: 1rem;
-        }
-        .testimonial-author {
-            display: flex;
-            flex-direction: column;
         }
         .testimonial-author-name {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--g-text-primary);
+            color: var(--text-primary);
         }
         .testimonial-author-title {
             font-size: 0.9rem;
-            color: var(--g-text-secondary);
+            color: var(--text-secondary);
         }
 
-
-        /* --- Main Dashboard (Tabs) --- */
+        /* --- NEW: Tab Dashboard (Styles from Option 2, adapted for Option 1's colors) --- */
         #dashboard {
-            scroll-margin-top: 20px;
+            background-color: var(--bg-white);
+            scroll-margin-top: 100px; /* Offset for sticky header */
         }
         .tabs {
             display: flex;
             flex-wrap: wrap;
-            border-bottom: 1px solid var(--g-border);
-            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
         }
         .tab-button {
             font-family: 'Roboto', sans-serif;
             font-size: 1rem;
             font-weight: 500;
-            color: var(--g-text-secondary);
+            color: var(--text-secondary);
             background: none;
             border: none;
             padding: 1rem 1.5rem;
             cursor: pointer;
             border-bottom: 3px solid transparent;
             transition: all 0.2s ease;
+            margin-bottom: -1px; /* Aligns with border */
         }
         .tab-button:hover {
-            background-color: #f1f3f4;
+            background-color: var(--bg-light);
         }
         .tab-button.active {
-            color: var(--g-blue);
-            border-bottom-color: var(--g-blue);
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
         }
         .tab-button .fa-solid {
             margin-right: 0.5rem;
@@ -333,21 +400,144 @@
         .tab-content.active {
             display: block;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        /* --- Tab 1: Work Dashboard --- */
+        /* --- Career Timeline (Content for Tab 1) --- */
+        /* Using styles from Option 1 for consistency */
+        .experience-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--border-color);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 60px; /* Space for dot */
+            padding-bottom: 2.5rem;
+            /* Animation is now controlled by tab, not scroll */
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 8px; /* (40px icon - 24px dot) / 2 */
+            top: 5px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg-white);
+            border: 4px solid var(--accent-blue);
+            z-index: 2;
+        }
+        .timeline-content {
+            position: relative;
+            background: var(--bg-light); /* Changed to light bg for contrast */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .timeline-date {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-blue);
+            margin-bottom: 0.25rem;
+        }
+        .timeline-role {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 0.25rem 0;
+        }
+        .timeline-company {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0;
+            padding-left: 20px;
+        }
+        .timeline-desc li { margin-bottom: 0.5rem; }
+        .timeline-desc li:last-child { margin-bottom: 0; }
+
+        /* --- Skills Section (Content for Tab 2) --- */
+        /* Using styles from Option 1 for consistency */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            perspective: 1000px; /* For 3D hover */
+        }
+        @media (min-width: 768px) {
+            .skill-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .skill-group {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            will-change: transform, box-shadow;
+        }
+        .skill-group:hover {
+            box-shadow: var(--shadow-lg);
+            transform: rotateX(2deg) rotateY(-2deg);
+        }
+        .skill-heading {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 0 0 1rem 0;
+        }
+        .skill-heading .fa-solid {
+            color: var(--accent-blue);
+            font-size: 1.3rem;
+            width: 25px;
+            text-align: center;
+        }
+        .skill-group p { font-size: 1rem; margin-bottom: 1rem; }
+        .skill-group ul { list-style-type: disc; margin: 0; padding-left: 20px; }
+        .skill-group li { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .skill-group li:last-child { margin-bottom: 0; }
+
+
+        /* --- Portfolio Section (Content for Tab 3) --- */
+        /* Using styles from Option 1 for consistency */
         .filter-chips {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         .filter-chip {
             font-family: 'Roboto', sans-serif;
             font-size: 0.875rem;
             font-weight: 500;
-            background: var(--g-bg-white);
-            border: 1px solid var(--g-border);
-            color: var(--g-text-secondary);
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
             padding: 8px 16px;
             border-radius: 20px;
             cursor: pointer;
@@ -357,41 +547,35 @@
             background: #f1f3f4;
         }
         .filter-chip.active {
-            background: #e8f0fe; /* Google's light blue */
-            color: var(--g-blue);
-            border-color: var(--g-blue);
+            background: #DBEAFE;
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
         }
         .filter-chip .fa-solid {
             margin-right: 0.5rem;
-            font-size: 0.8rem;
         }
 
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
+            perspective: 1000px; /* For 3D hover */
         }
-        .card {
-            background: var(--g-bg-white);
+        .portfolio-card {
+            background: var(--bg-white);
             border-radius: 12px;
-            box-shadow: 0 1px 2px 0 rgba(60,64,67,.3);
-            display: flex;
-            flex-direction: column;
+            box-shadow: var(--shadow-md);
             text-decoration: none;
-            color: var(--g-text-primary);
+            color: var(--text-primary);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 250px;
+            will-change: transform, box-shadow;
+            border: 1px solid var(--border-color);
         }
-        .card.hide {
-            transform: scale(0.9);
-            opacity: 0;
-            display: none;
-        }
-        .card:hover {
-            box-shadow: var(--g-shadow-hover);
-            transform: translateY(-4px);
-        }
-        
         .card-content {
             padding: 1.5rem;
             flex-grow: 1;
@@ -404,12 +588,12 @@
             text-transform: uppercase;
             margin-bottom: 0.75rem;
         }
-        .cat-ai { color: var(--g-blue); }
-        .cat-telecom { color: var(--g-green); }
-        .cat-case-study { color: var(--g-red); }
-        .cat-strategy { color: var(--g-yellow); }
-        .cat-solution { color: #8e44ad; } /* Purple */
-        .cat-video { color: #E67E22; } /* Orange */
+        .cat-ai { color: #2563EB; }
+        .cat-telecom { color: #059669; }
+        .cat-case-study { color: #DC2626; }
+        .cat-strategy { color: #D97706; }
+        .cat-solution { color: #7C3AED; }
+        .cat-video { color: #EA580C; }
 
         .card-title {
             font-size: 1.2rem;
@@ -418,124 +602,53 @@
             flex-grow: 1;
             margin-bottom: 1rem;
         }
-
         .card-link {
             font-weight: 500;
-            color: var(--g-blue);
+            color: var(--accent-blue);
             text-decoration: none;
-            margin-top: auto; 
+            margin-top: auto;
         }
         .card-link i {
             margin-left: 0.25rem;
             transition: transform 0.2s ease;
         }
-        .card:hover .card-link i {
+
+        /* 3D Tilt & Glare Effect */
+        .portfolio-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                110deg,
+                transparent 40%,
+                rgba(255, 255, 255, 0.5) 50%,
+                transparent 60%
+            );
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: 1;
+        }
+        .portfolio-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: rotateX(2deg) rotateY(-2deg) scale(1.02);
+        }
+        .portfolio-card:hover::before {
+            transform: translateX(100%);
+        }
+        .portfolio-card:hover .card-link i {
             transform: translateX(4px);
         }
 
-        /* --- Tab 2: Career Experience Timeline --- */
-        .experience-timeline {
-            position: relative;
-            padding-left: 20px;
-        }
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--g-border);
-        }
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            padding-bottom: 2rem;
-        }
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -9px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--g-bg-light);
-            border: 4px solid var(--g-blue);
-        }
-        .timeline-date {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--g-text-secondary);
-            margin-bottom: 0.25rem;
-        }
-        .timeline-role {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--g-text-primary);
-            margin: 0;
-        }
-        .timeline-company {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        .timeline-desc {
-            font-size: 0.95rem;
-            color: var(--g-text-secondary);
-            margin: 0;
-            padding-left: 20px; /* Indent bullets */
-        }
-        .timeline-desc li {
-            margin-bottom: 0.25rem;
-        }
 
-
-        /* --- Tab 3: Skills & Capabilities --- */
-        .skill-group {
-            margin-bottom: 2rem;
-        }
-        .skill-group:last-child {
-            margin-bottom: 0;
-        }
-        .skill-heading {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--g-text-primary);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        .skill-heading .fa-solid {
-            color: var(--g-blue);
-            font-size: 1.3rem;
-            width: 25px; /* Ensures alignment */
-            text-align: center;
-        }
-        .skill-group p {
-            font-size: 1rem;
-            max-width: 800px;
-            margin-bottom: 1rem;
-        }
-        .skill-group ul {
-            max-width: 800px;
-            list-style-type: disc;
-        }
-        .skill-group li {
-            font-size: 0.95rem;
-        }
-
-
-        /* --- Footer --- */
+        /* --- Footer (From Option 1) --- */
         .footer {
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            background: var(--g-bg-white);
-            border-top: 1px solid var(--g-border);
+            padding: 3rem 1.5rem;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
         }
         .footer-links {
             display: flex;
@@ -545,112 +658,117 @@
             gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
-        .footer-link {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--g-text-primary);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: background-color 0.2s ease;
-        }
-        .footer-link:hover {
-            background-color: #f1f3f4;
-        }
         .footer-link.cta {
-            background-color: var(--g-blue);
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background-color: var(--accent-blue);
             color: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
         }
         .footer-link.cta:hover {
-            background-color: #3b78e6;
+            background-color: var(--accent-blue-dark);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        .footer-link.cta .fa-brands {
+            margin-right: 0.5rem;
         }
         .footer-copy {
             font-size: 0.9rem;
-            color: var(--g-text-secondary);
+            color: var(--text-secondary);
         }
 
-
-        /* --- Animations --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* --- Scroll Animation (From Option 1) --- */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition-delay: 0.1s;
         }
-        @keyframes slideInFromLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(66, 133, 244, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(66, 133, 244, 0);
-            }
-        }
+        
     </style>
 </head>
 <body>
 
-    <main>
-        <section class="hero container" id="hero"> 
-            <div class="hero-left">
-                <h1>Victor Khen</h1>
-                <h2 class="hero-subtagline">Partner & Technical Marketing | AI Fabric | Telecom Networks</h2>
+    <header class="main-header">
+        <div class="header-content container">
+            <a href="#hero" class="header-logo" id="header-logo">Victor Khen</a>
+            <nav class="header-nav">
+                <a href="https://www.linkedin.com/in/victorkhen/" target="_blank" class="nav-link cta">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </nav>
+        </div>
+    </header>
 
-                <div class="hero-tagline">
-                    <div class="tagline-slider" id="tagline-slider">
-                    </div>
+    <main>
+        
+        <section class="hero content-section" id="hero">  
+            <div class="container">
+                <div class="hero-left reveal-on-scroll">
+                    <h1>Victor Khen</h1>
+                    <h2 class="hero-subtagline">Partner & Technical Marketing</h2>
+                    
+                    <ul class="hero-pillars">
+                        <li>
+                            <div class="pillar-header">
+                                <i class="fa-solid fa-microchip"></i>
+                                <strong>Full-Stack Technical Expertise</strong>
+                            </div>
+                            <p>Deep technical validation, from CLI testing to full carrier-grade architecture.</p>
+                        </li>
+                        <li>
+                            <div class="pillar-header">
+                                <i class="fa-solid fa-handshake"></i>
+                                <strong>Partner & Channel Builder</strong>
+                            </div>
+                            <p>Proven GTM, channel programs, and C-level hardware/operator relationships.</p>
+                        </li>
+                        <li>
+                            <div class="pillar-header">
+                                <i class="fa-solid fa-file-pen"></i>
+                                <strong>End-to-End Content Creator</strong>
+                            </div>
+                            <p>Scripts, designs, and produces all technical marketing assets.</p>
+                        </li>
+                    </ul>
+                    
+                    <a href="#dashboard" class="hero-cta" id="hero-cta-button">
+                        See My Work <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
                 
-                <p>I translate deep technical architectures into clear business value. My ability to operate between R&D, partners, and customers enables me to design effective GTM strategies and the content that brings them to life.</p>
-                
-                <ul>
-                    <li><strong>Full-Stack Technical Expertise:</strong> Hands-on from CLI testing to carrier-grade architecture design.</li>
-                    <li><strong>Partner & Channel Builder:</strong> Proven success developing ecosystem GTM strategies, channel programs and trainings, and C-level hardware/operator relationships.</li>
-                    <li><strong>End-to-End Content Creator:</strong> Scripts, designs, and produces complete technical marketing assets - from pitch decks and solution briefs to HTML pages and video promotion content.</li>
-                </ul>
-                
-                <p class="hero-outro">Bridging complex technology with compelling market execution.</p>
-                
-                <a href="https://www.linkedin.com/in/victorkhen/" target="_blank" class="hero-cta">
-                    Connect on LinkedIn <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-                <p class="hero-stats">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span>Trusted by <strong>14,000+</strong> followers & averaging <strong>3,000+</strong> views per post.</span>
-                </p>
-            </div>
-            
-            <div class="hero-right">
-                <div class="progression-timeline">
-                    <div class="progression-item">
-                        <h4>Video Surveillance</h4>
-                        <p>Foundation in Network Infrastructure</p>
+                <div class="hero-impact-grid reveal-on-scroll">
+                    <div class="hero-impact-card">
+                        <span class="icon"><i class="fa-solid fa-rocket"></i></span>
+                        <h3>Strategic Alliance & Market Creation</h3>
+                        <p>Orchestrated QSAN-Western Digital (WD) alliance, creating a market-leading solution that built new, dominant companies in the MEA surveillance market.</p>
                     </div>
-                    <div class="progression-item">
-                        <h4>Unified Comms & Data Storage</h4>
-                        <p>Understanding Enterprise Applications</p>
+                    <div class="hero-impact-card cat-red">
+                        <span class="icon"><i class="fa-solid fa-arrow-trend-up"></i></span>
+                        <h3>Partner-Led Revenue Growth</h3>
+                        <p>At IP Infusion, drove co-marketing strategies that contributed to <strong>20-40% YoY revenue growth</strong> from focus partners (Americas, EMEA, APAC).</p>
                     </div>
-                    <div class="progression-item">
-                        <h4>Telecom Transport Networks</h4>
-                        <p>Mastering Modern Transport Technologies</p>
-                    </div>
-                    <div class="progression-item current">
-                        <h4>AI Network Fabric</h4>
-                        <p>Marketing the Next Generation of DC Fabric</p>
+                    <div class="hero-impact-card social-proof">
+                        <span class="icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                        <h3>Social & Market Influence</h3>
+                        <p>Trusted by <strong>14,000+</strong> followers & averaging <strong>3,000+</strong> views per post on LinkedIn.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials">
+        <section id="testimonials" class="content-section reveal-on-scroll">
             <div class="container">
-                <h2>Recommendations</h2>
+                <h2 class="section-header">Recommendations</h2>
                 <div class="testimonial-grid">
                     <div class="testimonial-card">
                         <p class="testimonial-text">"Victor is incredibly bright and simply gets things done. During our time at IP Infusion, Victor was my team's Marketing partner and he consistently delivered. Always up to the task, Victor eagerly took on new initiatives and executed on time and with quality..."</p>
@@ -667,38 +785,82 @@
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <p class="testimonial-text">"Victor is a highly driven and aggressive sales professional who played a key role in growing company's business during his time with us. He's not only results-oriented but also a great team player who brings creative solutions to overcome challenges."</p>
+                        <p class="testimonial-text">"Victor is a highly driven and aggressive sales professional who played a key role in growing company's business... He's not only results-oriented but also a great team player who brings creative solutions to overcome challenges."</p>
                         <div class="testimonial-author">
                             <span class="testimonial-author-name">Steven Lin</span>
                             <span class="testimonial-author-title">VP, Sales and Marketing, QSAN</span>
                         </div>
                     </div>
-                     </div>
+                </div>
             </div>
         </section>
 
-        <div class="container">
-            <section id="dashboard">
-                <h2>Work Dashboard</h2>
-                
+        <section id="dashboard" class="content-section reveal-on-scroll">
+            <div class="container">
+                <h2 class="section-header" style="text-align: center; display: block; margin-bottom: 3rem;">My Work Dashboard</h2>
+
                 <div class="tabs">
-                    <button class="tab-button active" data-tab="tab-experience">
+                    <button class="tab-button active" data-tab="tab-career">
                         <i class="fa-solid fa-timeline"></i> Career Experience
                     </button>
-                    <button class="tab-button" data-tab="tab-work">
-                        <i class="fa-solid fa-briefcase"></i> Work Portfolio
-                    </button>
                     <button class="tab-button" data-tab="tab-skills">
-                        <i class="fa-solid fa-star"></i> Skills & Capabilities
+                        <i class="fa-solid fa-star"></i> Core Capabilities
+                    </button>
+                    <button class="tab-button" data-tab="tab-portfolio">
+                        <i class="fa-solid fa-briefcase"></i> Work Portfolio
                     </button>
                 </div>
 
-                <div id="tab-experience" class="tab-content active">
+                <div id="tab-career" class="tab-content active">
                     <div class="experience-timeline" id="experience-timeline">
                         </div>
                 </div>
 
-                <div id="tab-work" class="tab-content">
+                <div id="tab-skills" class="tab-content">
+                    <div class="skill-grid">
+                        <div class="skill-group">
+                            <h3 class="skill-heading">
+                                <i class="fa-solid fa-brain"></i>
+                                <span>Technical & Domain</span>
+                            </h3>
+                            <p>My marketing expertise is built on hands-on validation, from silicon to carrier-grade architecture.</p>
+                            <ul>
+                                <li><strong>Domains:</strong> Data Center/AI Fabric, Telecom (FTTx, xHaul, RAN), Optical (IPoDWDM), Storage (SAN/NAS), & Virtualization.</li>
+                                <li><strong>Hands-On:</strong> Proficient in NOS VMs, CLI validation, and server/storage configurations.</li>
+                                <li><strong>Leadership:</strong> Project lead for TIP DCSG interoperability and supported EANTC SR-MPLS/SRv6 testing.</li>
+                                <li><strong>Integration:</strong> Capable of planning complex solution integrations directly with partner engineering teams.</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h3 class="skill-heading">
+                                <i class="fa-solid fa-handshake"></i>
+                                <span>GTM & Partner Strategy</span>
+                            </h3>
+                            <p>I build and execute full-lifecycle partner strategies, from C-level relationships to in-field sales enablement.</p>
+                            <ul>
+                                <li><strong>Ecosystem:</strong> Proven experience in channel sales, business development, and solution selling across EMEA.</li>
+                                <li><strong>Key Relations:</strong> Maintain C-level hardware executive relationships in Taiwan/Europe and with key operators.</li>
+                                <li><strong>Program Management:</strong> Designed and managed complete channel programs (portals, rebates, benefits, deal tracking).</li>
+                                <li><strong>Enablement:</strong> Develop comprehensive sales enablement courses and quizzes (e.g., Litmos).</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h3 class="skill-heading">
+                                <i class="fa-solid fa-file-powerpoint"></i>
+                                <span>Content Execution</span>
+                            </h3>
+                            <p>A "full-stack" marketer owning the entire content pipeline—from R&D translation to final production.</p>
+                            <ul>
+                                <li><strong>Messaging:</strong> Expert in translating complex R&D concepts into clear, marketable GTM value propositions.</li>
+                                <li><strong>Full-Stack Design:</strong> Personally create all assets: PPTX, solution briefs, case studies, and PDF layouts.</li>
+                                <li><strong>Web & Video:</strong> Develop complete HTML solution pages and handle all video editing (webinars, interviews).</li>
+                                <li><strong>Studio & Hosting:</strong> Skilled in hosting, running interviews, and using pro-grade studio equipment.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-portfolio" class="tab-content">
                     <div class="filter-chips">
                         <button class="filter-chip active" data-filter="all">
                             <i class="fa-solid fa-star"></i> All Work
@@ -710,76 +872,31 @@
                             <i class="fa-solid fa-user-check"></i> Case Studies
                         </button>
                         <button class="filter-chip" data-filter="video">
-                            <i class="fa-solid fa-video"></i> Videos & Webinars
+                            <i class="fa-solid fa-video"></i> Videos
                         </button>
                         <button class="filter-chip" data-filter="strategy">
-                            <i class="fa-solid fa-lightbulb"></i> Strategy & Blogs
+                            <i class="fa-solid fa-lightbulb"></i> Strategy
                         </button>
-                         <button class="filter-chip" data-filter="ai">
+                        <button class="filter-chip" data-filter="ai">
                             <i class="fa-solid fa-brain"></i> AI Fabric
                         </button>
                         <button class="filter-chip" data-filter="telecom">
-                            <i class="fa-solid fa-tower-broadcast"></i> Telecom & FWA
+                            <i class="fa-solid fa-tower-broadcast"></i> Telecom
                         </button>
                     </div>
                     <div class="portfolio-grid" id="portfolio-grid">
                         </div>
                 </div>
 
-                <div id="tab-skills" class="tab-content">
-                    
-                    <div class="skill-group">
-                        <h3 class="skill-heading">
-                            <i class="fa-solid fa-brain"></i>
-                            <span>Technical & Domain Expertise</span>
-                        </h3>
-                        <p>My marketing expertise is built on a foundation of hands-on technical validation and broad domain knowledge, from silicon to carrier-grade architecture.</p>
-                        <ul>
-                            <li><strong>Broad Domain Knowledge:</strong> Deep expertise in Data Center/AI Fabric, Telecom (FTTx, xHaul, RAN, Aggregation), Optical (IPoDWDM), Enterprise Storage (SAN/NAS), and <strong>Virtualization</strong>.</li>
-                            <li><strong>Hands-On Validation:</strong> Proficient in testing and deploying network gear, including NOS VMs, CLI validation, and server/storage configurations.</li>
-                            <li><strong>Technical Leadership:</strong> Served as project lead for Telecom Infra Project (TIP) DCSG interoperability and supported EANTC SR-MPLS/SRv6 testing.</li>
-                            <li><strong>Partner Integration:</strong> Fully capable of discussing and planning complex technical solution integrations standalone with partner engineering teams.</li>
-                        </ul>
-                    </div>
+            </div>
+        </section>
 
-                    <div class="skill-group">
-                        <h3 class="skill-heading">
-                            <i class="fa-solid fa-handshake"></i>
-                            <span>GTM & Partner Strategy</span>
-                        </h3>
-                        <p>I specialize in building and executing full-lifecycle partner and channel strategies, from C-level relationship-building to in-field sales enablement.</p>
-                        <ul>
-                            <li><strong>Ecosystem Development:</strong> Proven experience in channel sales, business development, and solution selling, cultivating relationships with vendors, partners, and operators across EMEA.</li>
-                            <li><strong>C-Level & Key Relations:</strong> Maintain strong relationships with C-level hardware executives in Taiwan/Europe and key national data center operators.</li>
-                            <li><strong>Partner Program Management:</strong> Designed and managed complete channel programs, including partner portals, rebates, benefits, and deal tracking for case studies.</li>
-                            <li><strong>Sales Enablement:</strong> Develop comprehensive sales enablement courses and quizzes (e.g., Litmos) to empower partner and internal sales teams.</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-group">
-                        <h3 class="skill-heading">
-                            <i class="fa-solid fa-file-powerpoint"></i>
-                            <span>Content & Marketing Execution</span>
-                        </h3>
-                        <p>A "full-stack" marketer owning the entire content pipeline—from initial research and technical translation to final production and promotion, with no hand-offs required.</p>
-                        <ul>
-                            <li><strong>Product Messaging:</strong> Expert in translating complex R&D concepts and technical features into clear, marketable GTM messaging and value propositions.</li>
-                            <li><strong>Full-Stack Design:</strong> Personally create all assets: high-skill presentations (PPTX), technical solution briefs, case studies, and print/PDF layouts.</li>
-                            <li><strong>Web & Video Production:</strong> Develop complete HTML solution pages from scratch and handle all video editing (webinars, interviews) to a corporate standard.</li>
-                            <li><strong>Studio & Hosting:</strong> Skilled in hosting webinars, running interviews, and using professional camera, lighting, and audio equipment for high-quality content.</li>
-                            <li><strong>Event & Logistics:</strong> Extensive experience designing and executing trade show booths (messaging, graphics, topologies) and managing global marketing logistics.</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </section>
-        </div>
-    </main>
+        </main>
     
     <footer class="footer">
         <div class="footer-links">
             <a href="https://www.linkedin.com/in/victorkhen/" target="_blank" class="footer-link cta">
-                <i class="fa-brands fa-linkedin"></i> LinkedIn
+                <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
             </a>
         </div>
         <div class="footer-copy">
@@ -788,16 +905,8 @@
     </footer>
 
     <script>
-        // --- Data for the entire dashboard ---
+        // --- Data for the entire dashboard (From Option 1) ---
 
-        const animatedTaglines = [
-            'Building <strong class="c-blue">AI Network Fabrics</strong>',
-            'Driving <strong class="c-green">Telecom Disaggregation</strong>',
-            'Mastering <strong class="c-red">Partner Solution Marketing</strong>',
-            'From <strong class="c-yellow">Silicon to Solution</strong>'
-        ];
-
-        // --- UPDATED: portfolioData with new QSAN/WD URL and new position ---
         const portfolioData = [
             {
                 id: "v1",
@@ -834,7 +943,7 @@
             {
                 id: "p8",
                 title: "SR-MPLS Upgrade with OcNOS",
-                url: "https://www.ipinfusion.com/sr-mpls-upgrade-with-ocnos/",
+                url: "https.www.ipinfusion.com/sr-mpls-upgrade-with-ocnos/",
                 category: "Telecom Solution Brief",
                 catClass: "cat-solution",
                 tags: ["telecom", "solution"]
@@ -842,7 +951,7 @@
             {
                 id: "p4",
                 title: "VA Telecom Transforms with Open Networking",
-                url: "https://www.ipinfusion.com/customer-story/va-telecom-transforms-telecommunications-with-advanced-open-networking-solutions-from-ip-infusion-and-pine-networks/",
+                url: "https.www.ipinfusion.com/customer-story/va-telecom-transforms-telecommunications-with-advanced-open-networking-solutions-from-ip-infusion-and-pine-networks/",
                 category: "Case Study",
                 catClass: "cat-case-study",
                 tags: ["case-study", "telecom"]
@@ -850,15 +959,15 @@
             {
                 id: "p7",
                 title: "Broadlinc Selects OcNOS for Rural Broadband",
-                url: "https://www.ipinfusion.com/customer-story/broadlinc-selects-ip-infusions-ocnos-and-rocnet-for-rural-broadband-expansion-in-kentucky/",
+                url: "https.www.ipinfusion.com/customer-story/broadlinc-selects-ip-infusions-ocnos-and-rocnet-for-rural-broadband-expansion-in-kentucky/",
                 category: "Case Study",
                 catClass: "cat-case-study",
                 tags: ["case-study", "telecom"]
             },
             {
-                id: "p12", // <-- MOVED from first to here
+                id: "p12",
                 title: "Strategic Alliance: QSAN + Western Digital Solution",
-                url: "https://www.qsan.com/en/solution/western_digital", // <-- UPDATED URL
+                url: "https.www.qsan.com/en/solution/western_digital",
                 category: "Partner Solution Page",
                 catClass: "cat-case-study",
                 tags: ["case-study", "strategy", "solution"]
@@ -866,7 +975,7 @@
             {
                 id: "p1",
                 title: "The AI Network Decision Framework: A Guide to Speed, ROI, and Strategic Freedom",
-                url: "https://www.ipinfusion.com/blogs/the-ai-network-decision-framework-a-guide-to-speed-roi-and-strategic-freedom/",
+                url: "https.www.ipinfusion.com/blogs/the-ai-network-decision-framework-a-guide-to-speed-roi-and-strategic-freedom/",
                 category: "AI Strategy Blog",
                 catClass: "cat-strategy",
                 tags: ["ai", "strategy"]
@@ -881,7 +990,6 @@
             }
         ];
 
-        // --- UPDATED: experienceData with professional language refinement ---
         const experienceData = [
             {
                 date: "Aug 2023 - Present",
@@ -889,13 +997,10 @@
                 company: "IP Infusion",
                 desc: [
                     "Drove partner-led growth on a global scale (Americas, EMEA, APAC), developing co-marketing strategies that contributed to 20-40% YoY revenue growth from focus partners.",
-                    "Planned and executed joint go-to-market strategies with key partners, from local resellers to global GSIs and distributors, to drive expansion and co-sell opportunities.",
+                    "Planned and executed joint go-to-market strategies with key partners, from local resellers to global GSIs and distributors.",
                     "Achieved 80% training adoption by focus partners within the first year, securing C-level buy-in that resulted in new partner teams joining monthly.",
-                    "Hosted and ran regular technical partner webinars, translating complex features into clear, 'how-to-sell' value propositions for non-technical sales teams.",
-                    "Owned the full content lifecycle as a primary lead-generation source; created HTML solution pages, promo videos, and technical briefs, all integrated with lead-capture forms.",
-                    "Spearheaded ecosystem strategy by collaborating with internal PLM, SE, and Sales to recruit and build joint solutions with new tech partners (DDoS, RAN, FWA, FTTH).",
-                    "Provided actionable market intelligence to sales on competitor activity, new deployments, and emerging partner opportunities."
-                    
+                    "Owned the full content lifecycle; created HTML solution pages, promo videos, and technical briefs, all integrated with lead-capture forms.",
+                    "Spearheaded ecosystem strategy by collaborating with PLM, SE, and Sales to recruit and build joint solutions with new tech partners (DDoS, RAN, FWA, FTTH)."
                 ]
             },
             {
@@ -907,7 +1012,6 @@
                     "Managed product marketing for disaggregated core, metro, and access network hardware.",
                     "Led 5G market education via blogs, media content, and technical white papers.",
                     "Directed ecosystem development with open standards bodies (Broadband Forum, Telecom Infra Project).",
-                    "Planned and executed regional marketing campaigns to build market presence.",
                     "Project lead for Telecom Infra Project (TIP) DCSG interoperability and supported EANTC SR-MPLS/SRv6 testing."
                 ]
             },
@@ -916,10 +1020,9 @@
                 role: "Sr. Sales Manager | UK, EMEA",
                 company: "QSAN TECHNOLOGY INC.",
                 desc: [
-                    "<strong>Key Achievement: Orchestrated strategic QSAN-Western Digital (WD) alliance.</strong> Persuaded WD and channel partners to co-develop a market-leading SAN/JBOD solution, creating new companies in the Middle East that now dominate the surveillance market and enabling QSAN's team to <strong>co-sell with the larger WD sales organization.</strong>", // <-- REFINED LANGUAGE
+                    "<strong>Key Achievement: Orchestrated strategic QSAN-Western Digital (WD) alliance.</strong> Persuaded WD and channel partners to co-develop a market-leading SAN/JBOD solution, creating new companies in the Middle East surveillance market and enabling QSAN's team to co-sell with the larger WD sales organization.",
                     "Managed full-cycle channel sales and partner recruitment for 30+ distributors and dozens of SIs/resellers across EMEA.",
                     "Led ecosystem development with key tech partners including Western Digital, Seagate, Veeam, and Datacore.",
-                    "Drove market development through lead generation, partner visits, and solution selling for NAS/SAN data storage.",
                     "Developed and delivered partner training via seminars, webinars, and workshops to scale channel capabilities.",
                     "Managed and trained the regional sales team to drive brand growth in new territories."
                 ]
@@ -931,8 +1034,7 @@
                 desc: [
                     "Led strategic planning and APAC channel management for a new SaaS-based Unified Communications (UC&C) platform.",
                     "Drove Telecom business development and designed new telecom partner programs.",
-                    "Managed projects for UC&C, Surveillance, and Automation solutions.",
-                    "Developed and executed partner/sales team training and digital marketing (DM, Social) campaigns."
+                    "Managed projects for UC&C, Surveillance, and Automation solutions."
                 ]
             },
             {
@@ -950,109 +1052,84 @@
         // --- Wait for the page to load ---
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- 1. Initialize Animated Tagline ---
-            const slider = document.getElementById('tagline-slider');
-            if (slider) {
-                animatedTaglines.forEach(tag => {
-                    slider.innerHTML += `<span>${tag}</span>`;
-                });
-                
-                let currentTagline = 0;
-                setInterval(() => {
-                    currentTagline = (currentTagline + 1) % animatedTaglines.length;
-                    slider.style.transform = `translateY(-${currentTagline * 2.5}rem)`;
-                }, 5000); 
-            }
-
-            // --- 2. Initialize Tabs ---
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            function switchTab(tabTarget) {
-                tabButtons.forEach(btn => {
-                    const isTarget = btn.getAttribute('data-tab') === tabTarget;
-                    btn.classList.toggle('active', isTarget);
-                    if(isTarget) {
-                        btn.setAttribute('aria-current', 'page');
-                    } else {
-                        btn.removeAttribute('aria-current');
-                    }
-                });
-                
-                tabContents.forEach(content => {
-                    const isTarget = content.id === tabTarget;
-                    content.classList.toggle('active', isTarget);
-                });
-            }
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const tabTarget = button.getAttribute('data-tab');
-                    switchTab(tabTarget);
-                });
-            });
-            
-
-            // --- 3. Initialize Work Portfolio ---
+            // --- 1. Initialize Work Portfolio (From Option 1) ---
             const portfolioGrid = document.getElementById('portfolio-grid');
             const filterChips = document.querySelectorAll('.filter-chip');
 
-            // --- Function to render portfolio cards ---
             function renderPortfolioCards(filter = 'all') {
                 if (!portfolioGrid) return; 
 
-                portfolioGrid.innerHTML = '';
                 const filteredData = (filter === 'all')
                     ? portfolioData
                     : portfolioData.filter(item => item.tags.includes(filter));
                 
-                filteredData.forEach(item => {
-                    const card = document.createElement('a');
-                    card.className = 'card';
-                    card.href = item.url;
-                    card.target = '_blank';
-                    if (item.url === "#") {
-                        card.href = "javascript:void(0);";
-                        card.style.cursor = "default";
-                        card.target = '_self';
-                    }
-                    
-                    card.innerHTML = `
-                        <div class="card-content">
-                            <span class="card-category ${item.catClass}">${item.category}</span>
-                            <h3 class="card-title">${item.title}</h3>
-                            <span class="card-link">
-                                ${item.url === "#" ? "Internal Document (Not Public)" : 'View Project <i class="fa-solid fa-arrow-right"></i>'}
-                            </span>
-                        </div>
-                    `;
-                    portfolioGrid.appendChild(card);
-                }); 
-            } // --- End of renderPortfolioCards function ---
+                // Animate out old cards
+                Array.from(portfolioGrid.children).forEach((child, index) => {
+                    child.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                    child.style.transitionDelay = (index * 0.02) + 's';
+                    child.style.transform = 'scale(0.9)';
+                    child.style.opacity = '0';
+                });
 
-            // --- Event listener for filter chips ---
+                // Wait for animation, then rebuild
+                setTimeout(() => {
+                    portfolioGrid.innerHTML = '';
+                    
+                    filteredData.forEach(item => {
+                        const card = document.createElement('a');
+                        card.className = 'portfolio-card';
+                        card.href = item.url;
+                        card.target = '_blank';
+                        if (item.url === "#") {
+                            card.href = "javascript:void(0);";
+                            card.style.cursor = "default";
+                            card.target = '_self';
+                        }
+                        
+                        card.innerHTML = `
+                            <div class="card-content">
+                                <span class="card-category ${item.catClass}">${item.category}</span>
+                                <h3 class="card-title">${item.title}</h3>
+                                <span class="card-link">
+                                    ${item.url === "#" ? "Internal Document (Not Public)" : 'View Project <i class="fa-solid fa-arrow-right"></i>'}
+                                </span>
+                            </div>
+                        `;
+                        // Set initial state for animation
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        portfolioGrid.appendChild(card);
+                    });
+
+                    // Animate in new cards
+                    setTimeout(() => {
+                         Array.from(portfolioGrid.children).forEach((child, index) => {
+                            child.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                            child.style.transitionDelay = (index * 0.05) + 's';
+                            child.style.opacity = '1';
+                            child.style.transform = 'translateY(0)';
+                        });
+                    }, 50); // Small delay to ensure browser renders
+
+                }, 350); // Must be > animation-out time
+            } 
+
+            // Filter Chip Listeners
             if (filterChips.length > 0) {
                 filterChips.forEach(chip => {
                     chip.addEventListener('click', () => {
                         const filterValue = chip.getAttribute('data-filter');
-                        
                         filterChips.forEach(c => c.classList.remove('active'));
                         chip.classList.add('active');
-                        
-                        const allCards = portfolioGrid.querySelectorAll('.card');
-                        allCards.forEach(c => c.classList.add('hide'));
-                        
-                        setTimeout(() => {
-                            renderPortfolioCards(filterValue);
-                        }, 300); 
+                        renderPortfolioCards(filterValue);
                     });
                 });
             }
             
-            // Render portfolio
+            // Initial Render
             renderPortfolioCards('all');
 
-            // --- 4. Initialize Experience Timeline ---
+            // --- 2. Initialize Experience Timeline (From Option 1) ---
             const experienceContainer = document.getElementById('experience-timeline');
             function renderExperienceTimeline() {
                 if (experienceContainer) {
@@ -1063,23 +1140,97 @@
                         experienceContainer.innerHTML += `
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
-                                <div class="timeline-date">${item.date}</div>
-                                <h3 class="timeline-role">${item.role}</h3>
-                                <h4 class="timeline-company">${item.company}</h4>
-                                <ul class="timeline-desc">${descBullets}</ul>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">${item.date}</div>
+                                    <h3 class="timeline-role">${item.role}</h3>
+                                    <h4 class="timeline-company">${item.company}</h4>
+                                    <ul class="timeline-desc">${descBullets}</ul>
+                                </div>
                             </div>
                         `;
                     });
                 }
             }
-            // Render experience
             renderExperienceTimeline(); 
             
-            // --- 5. Set Current Year in Footer ---
+            // --- 3. Set Current Year in Footer (From Option 1) ---
             const yearSpan = document.getElementById('current-year');
             if (yearSpan) {
                 yearSpan.textContent = new Date().getFullYear();
             }
+
+            // --- 4. "WOW" Scroll Animations (From Option 1) ---
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target); 
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // --- 5. NEW: Tab Switching Logic (From Option 2) ---
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabTarget = button.getAttribute('data-tab');
+                    
+                    tabButtons.forEach(btn => {
+                        btn.classList.toggle('active', btn.getAttribute('data-tab') === tabTarget);
+                    });
+                    
+                    tabContents.forEach(content => {
+                        content.classList.toggle('active', content.id === tabTarget);
+                    });
+                });
+            });
+
+            // --- 6. "See My Work" Button Smooth Scroll (From Option 1, modified) ---
+            const heroCtaButton = document.getElementById('hero-cta-button');
+            if (heroCtaButton) {
+                heroCtaButton.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor jump
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            // --- 7. Sticky Header Logo (From Option 1) ---
+            const headerLogo = document.getElementById('header-logo');
+            const heroSection = document.getElementById('hero');
+
+            if (headerLogo && heroSection) {
+                const logoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Hero is visible, so HIDE the logo in the header
+                            headerLogo.classList.remove('is-visible');
+                        } else {
+                            // Hero is NOT visible, so SHOW the logo in the header
+                            headerLogo.classList.add('is-visible');
+                        }
+                    });
+                }, {
+                    threshold: 0 // Triggers as soon as the hero section leaves/enters the viewport
+                });
+
+                logoObserver.observe(heroSection);
+            }
+
         });
     </script>
 
